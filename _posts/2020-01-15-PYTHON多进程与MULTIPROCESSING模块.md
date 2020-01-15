@@ -4,7 +4,7 @@ title:      PYTHON多进程与MULTIPROCESSING模块
 subtitle:   MULTIPROCESSING
 date:       2020-01-15
 author:     朱晓旭
-header-img: img/bg.png
+header-img: img/bg.jpg
 catalog: true
 tags:
     - python
