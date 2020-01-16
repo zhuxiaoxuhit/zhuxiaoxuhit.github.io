@@ -184,19 +184,19 @@ if __name__ == '__main__':
 	for i in pool.imap_unordered(f, range(10)):  
 		print(i)
 
-	#evaluate "f(20)" asynchronously    
-	res = pool.apply_async(f, (20,))		# runs in *only* one process  
-	print(res.get(timeout=1))		# prints "400"  
+	#evaluate "f(20)" asynchronously <br>   
+	res = pool.apply_async(f, (20,))		# runs in *only* one process  <br>
+	print(res.get(timeout=1))		# prints "400"  <br>
 
-	#evaluate "os.getpid()" asynchronously  
-	res = pool.apply_async(os.getpid, ())	# runs in *only* one process  
-	print(res.get(timeout=1))             	# prints the PID of that process  
+	#evaluate "os.getpid()" asynchronously  <br>
+	res = pool.apply_async(os.getpid, ())	# runs in *only* one process  <br>
+	print(res.get(timeout=1))             	# prints the PID of that process <br> 
 
-	#launching multiple evaluations asynchronously *may* use more processes  
-	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  
-	print([res.get(timeout=1) for res in multiple_results])  
-	#make a single worker sleep for 10 secs  
-	res = pool.apply_async(time.sleep, (10,))  
+	#launching multiple evaluations asynchronously *may* use more processes  <br>
+	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  <br>
+	print([res.get(timeout=1) for res in multiple_results])  <br>
+	#make a single worker sleep for 10 secs  <br>
+	res = pool.apply_async(time.sleep, (10,))  <br>
 ```
 运行结果：
 ![mp10](/img/mp10.jpg)
