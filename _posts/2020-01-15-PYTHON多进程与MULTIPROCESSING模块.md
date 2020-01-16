@@ -54,8 +54,19 @@ if __name__ == '__main__':
 join的作用是阻塞主进程（主进程等待p进程执行完毕，才继续执行），和多线程一样。python 默认参数创建线程后，不管主线程是否执行完毕，都会等待子线程执行完毕才一起退出，有无join结果一样。join方法有一个参数是timeout，即如果主线程等待timeout，子线程还没有结束，则主线程强制结束子线程。
 
 #### 例子
-
-
+通过创建一个 Process 对象然后调用它的 start() 方法来生成进程。 Process 和 threading.Thread API 相同。
+```python
+from multiprocessing import Process
+def f(name):
+	     print('hello', name,'!')
+		   
+		  if __name__ == '__main__':
+		        p = Process(target=f, args=('zhuxiaoxu',))
+				      p.start()
+	      p.join()
+```
+运行结果:
+![mp1](/img/mp1.jpg)
 
 
 ### 参考
