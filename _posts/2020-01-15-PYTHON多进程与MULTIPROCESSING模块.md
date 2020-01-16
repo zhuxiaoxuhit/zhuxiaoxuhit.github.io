@@ -110,7 +110,7 @@ if __name__ == '__main__':
 	q = Queue()
 	p = Process(target=f, args=(q,))
 	p.start()
-	print(q.get())		#prints "[42, None, 'hello']"  
+	print(q.get())		#prints "[42, None, 'hello']"    
 	p.join()
 ```
 运行结果：
@@ -127,7 +127,7 @@ if __name__ == '__main__':
 	a, b = Pipe()
 	p = Process(target=f, args=(a,))
 	p.start()
-	print(b.recv())		# prints "[42, None, 'hello']"  
+	print(b.recv())		# prints "[42, None, 'hello']"      
 	p.join()
 ```
 运行结果：
@@ -174,28 +174,28 @@ def f(x):
 	return x*x
 
 if __name__ == '__main__':
-	# start 4 worker processes  
+	#start 4 worker processes     
 	with Pool(processes=4) as pool:
 
-	# print "[0, 1, 4,..., 81]"  
+	#print "[0, 1, 4,..., 81]"   
 	print(pool.map(f, range(10)))
 
-	# print same numbers in arbitrary order  
+	#print same numbers in arbitrary order  
 	for i in pool.imap_unordered(f, range(10)):  
 		print(i)
 
-	# evaluate "f(20)" asynchronously    
+	#evaluate "f(20)" asynchronously    
 	res = pool.apply_async(f, (20,))		# runs in *only* one process  
 	print(res.get(timeout=1))		# prints "400"  
 
-	# evaluate "os.getpid()" asynchronously  
+	#evaluate "os.getpid()" asynchronously  
 	res = pool.apply_async(os.getpid, ())	# runs in *only* one process  
 	print(res.get(timeout=1))             	# prints the PID of that process  
 
-	# launching multiple evaluations asynchronously *may* use more processes  
+	#launching multiple evaluations asynchronously *may* use more processes  
 	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  
 	print([res.get(timeout=1) for res in multiple_results])  
-	# make a single worker sleep for 10 secs  
+	#make a single worker sleep for 10 secs  
 	res = pool.apply_async(time.sleep, (10,))  
 ```
 运行结果：
