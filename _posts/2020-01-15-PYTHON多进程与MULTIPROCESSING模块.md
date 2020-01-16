@@ -18,8 +18,8 @@ tags:
 ## python多线程与GIL（Global Interpreter Lock） 
 >python多进程多线程是个古老的话题了，最近翻到之前自己写的文档，顺手摘录到博客上了。  
 
-python的全局解释器锁使得任意时刻只有一个线程在真正运行，所以呢，可以讲它是"假多线程"。他能对脚本的提速仅仅体现在IO操作中，因为IO操作是可以和线程并行的，所以它节省了IO操作时间。正是由于它的GIL锁的出现，才有了本场multiprocessing的解说。  
-![gil](img/gil.jpg)
+python的全局解释器锁使得任意时刻只有一个线程在真正运行，所以呢，可以讲它是"假多线程"。他能对脚本的提速仅仅体现在IO操作中，因为IO操作是可以和线程并行的，所以它节省了IO操作时间。正是由于它的GIL锁的出现，才会使得多线程的种种弊端。 
+![gil](/img/gil.jpg)
 
 ## multiprocessing.Process简要介绍
 multiprocessing 是一个用与 threading 模块相似API的支持产生进程的包。 multiprocessing 包同时提供本地和远程并发，使用子进程代替线程，有效避免 Global Interpreter Lock 带来的影响。     
