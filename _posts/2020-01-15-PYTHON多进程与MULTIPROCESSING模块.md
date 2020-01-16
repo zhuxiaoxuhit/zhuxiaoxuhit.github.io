@@ -28,33 +28,32 @@ multiprocessing 是一个用与 threading 模块相似API的支持产生进程�
 
 #### 类的方法：
 `start()`
->启动进程活动。
-
+>启动进程活动。   
 `join([timeout])`
->如果可选参数 timeout 是 None （默认值），则该方法将阻塞，直到调用 join() 方法的进程终止。一个进程可以被 join 多次。进程无法join自身，因为这会导致死锁。
-	
+>如果可选参数 timeout 是 None （默认值），则该方法将阻塞，直到调用 join() 方法的进程终止。一个进程可以被 join 多次。进程无法join自身，因为这会导致死锁。  
 `is_alive()`
->返回进程是否还活着。
-
+>返回进程是否还活着。  
 `daemon`
->守护进程的标志，一个布尔值。这必须在 start() 被调用之前设置。
-	
+>守护进程的标志，一个布尔值。这必须在 start() 被调用之前设置。  
 `close()`
-关闭 Process 对象，释放与之关联的所有资源。
+关闭 Process 对象，释放与之关联的所有资源。  
 
 #### 例子
 通过创建一个 Process 对象然后调用它的 start() 方法来生成进程。 Process 和 threading.Thread API 相同。   
-`from multiprocessing import Process  
+```python
+from multiprocessing import Process  
 def f(name):   
 	print('hello', name,'!')       
 if __name__ == '__main__':        
 	p = Process(target=f, args=('zhuxiaoxu',))     
 	p.start()   
 	p.join()    
-`
+```
 
+## Join
+join的作用是阻塞主进程（主进程等待p进程执行完毕，才继续执行），和多线程一样。python 默认参数创建线程后，不管主线程是否执行完毕，都会等待子线程执行完毕才一起退出，有无join结果一样。join方法有一个参数是timeout，即如果主线程等待timeout，子线程还没有结束，则主线程强制结束子线程。
 
-
+#### 例子
 
 
 
