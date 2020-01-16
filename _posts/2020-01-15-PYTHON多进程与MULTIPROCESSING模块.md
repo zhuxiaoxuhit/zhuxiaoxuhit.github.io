@@ -27,7 +27,7 @@ multiprocessing 是一个用与 threading 模块相似API的支持产生进程�
 >group 应该始终是 None ；它仅用于兼容 threading.Thread 。 target 是由 run() 方法调用的可调用对象。它默认为 None ，意味着什么都没有被调用。 name 是进程名称（有关详细信息，请参阅 name ）。 args 是目标调用的参数元组。 kwargs 是目标调用的关键字参数字典。如果提供，则键参数 daemon 将进程 daemon 标志设置为 True 或 False 。如果是 None （默认值），则该标志将从创建的进程继承。
 
 #### 类的方法：
-`start()`
+>`start()`
 >启动进程活动。   
 `join([timeout])`
 >如果可选参数 timeout 是 None （默认值），则该方法将阻塞，直到调用 join() 方法的进程终止。一个进程可以被 join 多次。进程无法join自身，因为这会导致死锁。  
