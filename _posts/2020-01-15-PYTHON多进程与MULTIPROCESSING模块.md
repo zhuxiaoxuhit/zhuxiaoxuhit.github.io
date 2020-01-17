@@ -110,7 +110,7 @@ if __name__ == '__main__':
 	q = Queue()
 	p = Process(target=f, args=(q,))
 	p.start()
-	print(q.get())		#prints "[42, None, 'hello']"    
+	print(q.get())  
 	p.join()
 ```
 运行结果：
@@ -127,7 +127,7 @@ if __name__ == '__main__':
 	a, b = Pipe()
 	p = Process(target=f, args=(a,))
 	p.start()
-	print(b.recv())		# prints "[42, None, 'hello']"      
+	print(b.recv())		      
 	p.join()
 ```
 运行结果：
@@ -184,19 +184,17 @@ if __name__ == '__main__':
 	for i in pool.imap_unordered(f, range(10)):  
 		print(i)
 
-	#evaluate "f(20)" asynchronously <br>   
-	res = pool.apply_async(f, (20,))		# runs in *only* one process  <br>
-	print(res.get(timeout=1))		# prints "400"  <br>
+	res = pool.apply_async(f, (20,))		
+	print(res.get(timeout=1))		
 
-	#evaluate "os.getpid()" asynchronously  <br>
-	res = pool.apply_async(os.getpid, ())	# runs in *only* one process  <br>
-	print(res.get(timeout=1))             	# prints the PID of that process <br> 
+	res = pool.apply_async(os.getpid, ())	
+	print(res.get(timeout=1))             	
 
-	#launching multiple evaluations asynchronously *may* use more processes  <br>
-	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  <br>
-	print([res.get(timeout=1) for res in multiple_results])  <br>
-	#make a single worker sleep for 10 secs  <br>
-	res = pool.apply_async(time.sleep, (10,))  <br>
+	#launching multiple evaluations asynchronously *may* use more processes  
+	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  
+	print([res.get(timeout=1) for res in multiple_results])  
+	#make a single worker sleep for 10 secs  
+	res = pool.apply_async(time.sleep, (10,))  
 ```
 运行结果：
 ![mp10](/img/mp10.jpg)
