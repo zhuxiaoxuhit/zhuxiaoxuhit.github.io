@@ -174,13 +174,10 @@ def f(x):
 	return x*x
 
 if __name__ == '__main__':
-	#start 4 worker processes     
 	with Pool(processes=4) as pool:
 
-	#print "[0, 1, 4,..., 81]"   
 	print(pool.map(f, range(10)))
 
-	#print same numbers in arbitrary order  
 	for i in pool.imap_unordered(f, range(10)):  
 		print(i)
 
@@ -190,10 +187,8 @@ if __name__ == '__main__':
 	res = pool.apply_async(os.getpid, ())	
 	print(res.get(timeout=1))             	
 
-	#launching multiple evaluations asynchronously *may* use more processes  
 	multiple_results = [pool.apply_async(os.getpid, ()) for i in range(4)]  
 	print([res.get(timeout=1) for res in multiple_results])  
-	#make a single worker sleep for 10 secs  
 	res = pool.apply_async(time.sleep, (10,))  
 ```
 运行结果：
