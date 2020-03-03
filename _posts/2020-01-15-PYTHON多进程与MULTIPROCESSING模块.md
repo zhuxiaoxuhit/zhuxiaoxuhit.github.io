@@ -134,6 +134,7 @@ if __name__ == '__main__':
 ![mp7](/img/mp7.jpg)
 
 ## 进程之间的同步和Lock
+python在操作数据的时候，比如两个加法指令在操作同一个变量时，底层表现为寄存器之间的操作，而操作寄存器的时候往往是多个寄存器操作，为防止存取不当，因此py脚本中的加法操作应该保证是顺序进行的。
 ```python
 from multiprocessing import Process, Lock
 def f(l, i):
