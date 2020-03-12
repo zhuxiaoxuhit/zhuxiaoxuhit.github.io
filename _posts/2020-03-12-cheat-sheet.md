@@ -48,7 +48,7 @@ kernel size(卷积核尺寸):4
 Stride:1         
 Weights:4*3*2(卷积核尺寸*输入维度*输出维度)         
 Output:8*2("SAME") or (8-4+1)*2("VALID")             
-![](/img/cc_cnn4.PNG) 
+![](/img/cc_cnn4.JPG) 
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
 Input:7*5(句子帧数*每帧的维度)         
 Filters(output channel or滤波器数量or输出维度or输出深度):for i in 2,2,3,3,4,4       
