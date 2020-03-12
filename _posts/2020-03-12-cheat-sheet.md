@@ -40,6 +40,8 @@ kernel size(卷积核尺寸):4x4
 Stride:1         
 Weights:4x4x3x1(卷积核尺寸x输入维度x输出维度)             
 Output:10x10x4("SAME") or (10-4+1)x(10-4+1)x4("VALID")           
+![](/img/cc_cnn1.png)         
+![](/img/cc_cnn2.png)         
 ![](/img/cc_cnn3.png)         
 #### 1D
 Input:8x3(句子帧数x每帧的维度)        
