@@ -33,25 +33,34 @@ tags:
 e.g.
 <center>$$a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h})$$</center>
 ##  CNN
-#### 2D
-Input:10*10*3(长*宽*输入维度)
-Filters(output channel or滤波器数量or输出维度or输出深度):4
-kernel size(卷积核尺寸):4*4
-Stride:1
-Weights:4*4*3*1(卷积核尺寸*输入维度*输出维度)
-Output:10*10*4("SAME")   or   (10-4+1)*(10-4+1)*4("VALID")
-![](cc_cnn3.png)
+#### 2D 
+Input:10*10*3(长*宽*输入维度)     
+Filters(output channel or滤波器数量or输出维度or输出深度):4            
+kernel size(卷积核尺寸):4*4                    
+Stride:1         
+Weights:4*4*3*1(卷积核尺寸*输入维度*输出维度)             
+Output:10*10*4("SAME") or (10-4+1)*(10-4+1)*4("VALID")           
+![](cc_cnn3.png)         
 #### 1D
-Input:8*3(句子帧数*每帧的维度)
-Filters(output channel or滤波器数量or输出维度or输出深度):2
-kernel size(卷积核尺寸):4
-Stride:1
-Weights:4*3*2(卷积核尺寸*输入维度*输出维度)
-Output:8*2("SAME")   or   (8-4+1)*2("VALID")
-![](cc_cnn4.PNG)
+Input:8*3(句子帧数*每帧的维度)        
+Filters(output channel or滤波器数量or输出维度or输出深度):2        
+kernel size(卷积核尺寸):4          
+Stride:1         
+Weights:4*3*2(卷积核尺寸*输入维度*输出维度)         
+Output:8*2("SAME") or (8-4+1)*2("VALID")             
+![](cc_cnn4.PNG) 
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
+Input:7*5(句子帧数*每帧的维度)         
+Filters(output channel or滤波器数量or输出维度or输出深度):for i in 2,2,3,3,4,4       
+kernel size(卷积核尺寸):1           
+Stride:1       
+Weights:2*5*1,2*5*1,3*5*1,3*5*1,4*5*1,4*5*1(卷积核尺寸*输入维度*输出维度)       
+Max pooling and the first time concat 0utput:2*1,2*1,2*1     
+After second concat:6*1            
+Output:2*1                
 ![](cc_cnn5.jpg)
-
+#### 参考
+- [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
 
 
 
