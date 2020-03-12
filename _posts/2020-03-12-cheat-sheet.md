@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Cheat Sheet
-subtitle:   Cheat sheet
+subtitle:   Math Form
 date:       2020-03-12
 author:     朱晓旭
 header-img: img/bg.jpg
@@ -13,7 +13,6 @@ tags:
     - GRU
     - Attention	
 ---
-
 
 ##LSTM
 <center>$$\boldsymbol{I}_t &= \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xi} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hi} + \boldsymbol{b}_i)$$</center>
