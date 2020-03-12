@@ -26,10 +26,32 @@ tags:
 <center>$$\boldsymbol{Z}_t = \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xz} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hz} + \boldsymbol{b}_z)$$</center>
 <center>$$\tilde{\boldsymbol{H}}_t = \text{tanh}(\boldsymbol{X}_t \boldsymbol{W}_{xh} + \left(\boldsymbol{R}_t \odot \boldsymbol{H}_{t-1}\right) \boldsymbol{W}_{hh} + \boldsymbol{b}_h)$$</center>
 <center>$$\boldsymbol{H}_t = \boldsymbol{Z}_t \odot \boldsymbol{H}_{t-1}  + (1 - \boldsymbol{Z}_t) \odot \tilde{\boldsymbol{H}}_t$$</center>
-##  CNN 
 ##  Attention
 <center>$$\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t$$</center>
 <center>$$\alpha_{t' t} = \frac{\exp(e_{t' t})}{ \sum_{k=1}^T \exp(e_{t' k}) },\quad t=1,\ldots,T$$</center>
 <center>$$e_{t' t} = a(\boldsymbol{s}_{t' - 1}, \boldsymbol{h}_t)$$</center>
 e.g.
 <center>$$a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h})$$</center>
+##  CNN
+#### 2D
+Input:10*10*3(长*宽*输入维度)
+Filters(output channel or滤波器数量or输出维度or输出深度):4
+kernel size(卷积核尺寸):4*4
+Stride:1
+Weights:4*4*3*1(卷积核尺寸*输入维度*输出维度)
+Output:10*10*4("SAME")   or   (10-4+1)*(10-4+1)*4("VALID")
+![](cc_cnn3.png)
+#### 1D
+Input:8*3(句子帧数*每帧的维度)
+Filters(output channel or滤波器数量or输出维度or输出深度):2
+kernel size(卷积核尺寸):4
+Stride:1
+Weights:4*3*2(卷积核尺寸*输入维度*输出维度)
+Output:8*2("SAME")   or   (8-4+1)*2("VALID")
+![](cc_cnn4.PNG)
+#### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
+![](cc_cnn5.jpg)
+
+
+
+
