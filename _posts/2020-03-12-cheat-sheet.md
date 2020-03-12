@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Cheat Sheet
-subtitle:   Math Form
+subtitle:   Mathematical formula
 date:       2020-03-12
 author:     朱晓旭
 header-img: img/bg.jpg
