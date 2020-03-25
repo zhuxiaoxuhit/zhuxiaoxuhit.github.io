@@ -150,7 +150,7 @@ sox −m music.mp3 voice.wav mixed.flac
 #### 获取文件meta信息(soxi 或者 sox --i)
 - soxi 或 sox --i 命令可以通过解析音频文件的文件头，获取其元数据（如通道数，采样率，位深，持续时间，比特率等）。
 <pre>
-base [zhuxiaoxu@gpu66 wav_input]$ soxi multilingual_000000.wav
+(base) [zhuxiaoxu@gpu66 wav_input]$ soxi multilingual_000000.wav
 Input File     : 'multilingual_000000.wav'
 Channels       : 1
 Sample Rate    : 16000
