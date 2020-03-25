@@ -25,7 +25,8 @@ sox命令处理流程：
 Input(s) -> Combiner -> Effects -> Output(s)
 
 sox命令的格式：
-官方文档给出的：<pre>
+官方文档给出的：
+<pre>
 sox [global-options] [format-options] infile1                     
 [[format-options] infile2] ... [format-options] outfile               
 [effect [effect-options]] ...       
