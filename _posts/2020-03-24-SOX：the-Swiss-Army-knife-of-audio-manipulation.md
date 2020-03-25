@@ -27,9 +27,9 @@ Input(s) -> Combiner -> Effects -> Output(s)
 sox命令的格式：
 官方文档给出的：
 ```console
-- sox [global-options] [format-options] infile1
-[[format-options] infile2] ... [format-options] outfile
-[effect [effect-options]] ...
+sox [global-options] [format-options] infile1                     
+[[format-options] infile2] ... [format-options] outfile               
+[effect [effect-options]] ...       
 
 ```
 我们比较常用的处理单个文件的指令格式：
@@ -39,41 +39,41 @@ sox  infile  format  outfile   effect
 
 参数(Gain用来表示信号的强度，是音频输入信号和输出信号差异的幅度,gain 控制的是「进入」声音设备的信号,volume是声音大小（响度）的值,volume控制的是从声音设备「输出」的声响大小.将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受)：     
 ```console
-SPECIAL FILENAMES (infile only):
-"|program [options] ..." 使用管道
-http://server/file       使用音频文件的url作为输入文件（URL支持需要wget是可用的）
+SPECIAL FILENAMES (infile only):                       
+"|program [options] ..." 使用管道             
+http://server/file       使用音频文件的url作为输入文件（URL支持需要wget是可用的）             
 
-GLOBAL OPTIONS (gopts) (在第一个effect之前的任意位置):
---buffer BYTES， 	 sox处理音频的时候的缓存字节数。
---clobber                当输出文件文件名已经存在默认会进行重写覆盖。
---combine concatenate    Concat音频(-m是mix，-M是merge，-T是multiply)
---dft-min NUM            Minimum size (log2) for DFT processing (default 10)
---effects-file FILENAME  File containing effects and options
--G，--guard		 使用gain effect来防止音频截幅或者截频或者响度norm时超过限制造成失真。例子sox −G infile −b 16 outfile rate 44100 dither −s
---i, --info              和soxi相同
--m, -M，-T               -m是mix，-M是merge，-T是multiply
---norm[dB-level]	 自动的使用gain effect防止失真并且响度归一化音频。                   
--S，--show-progress	 显示处理的音频的meta信息以及已经处理的百分比。
--V[level]		 设置打印在终端的信息。0是没有信息打印，1是仅错误被打印，2警告也会被打印，3包括描述信息等都被打印，4所有信息都被打印
+GLOBAL OPTIONS (gopts) (在第一个effect之前的任意位置):            
+--buffer BYTES， 	 sox处理音频的时候的缓存字节数。            
+--clobber                当输出文件文件名已经存在默认会进行重写覆盖。            
+--combine concatenate    Concat音频(-m是mix，-M是merge，-T是multiply)                
+--dft-min NUM            Minimum size (log2) for DFT processing (default 10)              
+--effects-file FILENAME  File containing effects and options             
+-G，--guard		 使用gain effect来防止音频截幅或者截频或者响度norm时超过限制造成失真。例子sox −G infile −b 16 outfile rate 44100 dither −s              
+--i, --info              和soxi相同                    
+-m, -M，-T               -m是mix，-M是merge，-T是multiply                   
+--norm[dB-level]	 自动的使用gain effect防止失真并且响度归一化音频。                               
+-S，--show-progress	 显示处理的音频的meta信息以及已经处理的百分比。                  
+-V[level]		 设置打印在终端的信息。0是没有信息打印，1是仅错误被打印，2警告也会被打印，3包括描述信息等都被打印，4所有信息都被打印            
 
-FORMAT OPTIONS (fopts):输出文件将尽可能与输入文件具有相同的格式，并且不会被包括提供输出格式选项在内的各种方式所覆盖。
--v|--volume FACTOR       调整音频音量的大小。
---ignore-length          忽略头文件给的音频长度信息；读到结束标志EOF为止
--t|--type FILETYPE       音频类型(wav,mp3,flac等等)。self-describing格式（如 WAV、FLAC、MP3）的文件包含一个用于描述信号和编码属性的文件头，而raw或headless格式的音频则不包含这些信息。
--e|--encoding ENCODING   采样点的编码格式(ENCODING may be one of signed-integer,unsigned-integer, floating-point, mu-law, a-law,ima-adpcm, ms-adpcm, gsm-full-rate)
--b|--bits BITS           位深(一个采样点用几个bit保存)
--N|--reverse-nibbles     nibble是半个byte(4bit)。
--X|--reverse-bits        Encoded bit-order
---endian little|big|swap Encoded byte-order; swap means opposite to default
--L/-B/-x                 Short options for the above
--c|--channels CHANNELS   声道数; e.g. 1=mono 2 = stereo
--r|--rate RATE           采样率
--C|--compression FACTOR  Compression factor for output format
---no-glob                Don't `glob' wildcard match the following filename
+FORMAT OPTIONS (fopts):输出文件将尽可能与输入文件具有相同的格式，并且不会被包括提供输出格式选项在内的各种方式所覆盖。                     
+-v|--volume FACTOR       调整音频音量的大小。                              
+--ignore-length          忽略头文件给的音频长度信息；读到结束标志EOF为止                        
+-t|--type FILETYPE       音频类型(wav,mp3,flac等等)。self-describing格式（如 WAV、FLAC、MP3）的文件包含一个用于描述信号和编码属性的文件头，而raw或headless格式的音频则不包含这些信息。            
+-e|--encoding ENCODING   采样点的编码格式(ENCODING may be one of signed-integer,unsigned-integer, floating-point, mu-law, a-law,ima-adpcm, ms-adpcm, gsm-full-rate)                 
+-b|--bits BITS           位深(一个采样点用几个bit保存)                   
+-N|--reverse-nibbles     nibble是半个byte(4bit)。                       
+-X|--reverse-bits        Encoded bit-order                 
+--endian little|big|swap Encoded byte-order; swap means opposite to default             
+-L/-B/-x                 Short options for the above              
+-c|--channels CHANNELS   声道数; e.g. 1=mono 2 = stereo           
+-r|--rate RATE           采样率            
+-C|--compression FACTOR  Compression factor for output format             
+--no-glob                Don't `glob' wildcard match the following filename               
 
-EFFECTS:
-pitch[-q]shift [segment [search [overlap]]] 	改变音频的pitch音高。
-spectrogram 					画声谱图。-y是声谱图的y轴最大长度，-m是灰度。比如 -y  129  -m -r 
+EFFECTS:                        
+pitch[-q]shift [segment [search [overlap]]] 	改变音频的pitch音高。                 
+spectrogram 					画声谱图。-y是声谱图的y轴最大长度，-m是灰度。比如 -y  129  -m -r            
 ```
 
 
@@ -87,13 +87,11 @@ sox a.mp3 b.wav
 ```
 
 - sox把mp3格式转换为wav格式，并且附加effects:b.wav保存为单通道mono,16k采样率,音频淡入特效fade-in，normalization，并且保位深16bit.
-
 ```console
 sox a.mp3 −b 16 b.wav channels 1 rate 16k fade 3 norm
 ```
 
 - sox把二进制文件(无header信息)转换为wav文件，格式选项为：采样率为16k，有符号8bit整数，单通道。注意把raw文件转为其他格式需要指名格式，因为raw为二进制文件，不含有meta信息。(可理解为np.fromfile需要指明文件类型)
-
 ```console
 sox −r 16k −e signed −b 8 −c 1 voice-memo.raw voice-memo.wav
 ```
@@ -132,6 +130,7 @@ sox original.wav mono.wav channels 1
 sox stereo.wav channel_2.wav remix 2
 sox stereo.wav channel_2.wav remix 1,2,3
 ```
+
 - 画声谱图(a.wav的第一个声道采样率10k，y轴长度129，输出为a.png)
 ```console
 sox  a.wav -n remix 1 rate 10k spectrogram  -y  129  -m -r -o  a.png
