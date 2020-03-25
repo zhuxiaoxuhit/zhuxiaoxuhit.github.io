@@ -26,6 +26,13 @@ Input(s) -> Combiner -> Effects -> Output(s)
 
 sox命令的格式：
 官方文档给出的：
+<pre>
+afjkladfamf
+ajfkl;ja;ldlkf;ad    adfkjl;ajkl 
+ dsfjl;jladfl;'ak		afkd;l'akf;lkaf
+ldkf;laklfa
+</pre>
+
 ```console 
 
 sox [global-options] [format-options] infile1                     
