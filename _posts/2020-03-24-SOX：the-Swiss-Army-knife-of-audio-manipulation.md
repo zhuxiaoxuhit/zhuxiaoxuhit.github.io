@@ -32,7 +32,7 @@ sox [global-options] [format-options] infile1
 [effect [effect-options]] ...       
 </pre>
 我们比较常用的处理单个文件的指令格式：
-<pre> 
+<pre>
 sox  infile  format  outfile   effect
 </pre>
 
