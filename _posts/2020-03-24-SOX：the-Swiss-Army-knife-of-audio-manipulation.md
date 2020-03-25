@@ -26,28 +26,20 @@ Input(s) -> Combiner -> Effects -> Output(s)
 
 sox命令的格式：
 官方文档给出的：
-<pre>
-afjkladfamf
-ajfkl;ja;ldlkf;ad    adfkjl;ajkl 
- dsfjl;jladfl;'ak		afkd;l'akf;lkaf
-ldkf;laklfa
-</pre>
-
-```console 
-
+<pre> 
 sox [global-options] [format-options] infile1                     
 [[format-options] infile2] ... [format-options] outfile               
 [effect [effect-options]] ...       
 
-```
+</pre>
 我们比较常用的处理单个文件的指令格式：
-```console 
+<pre> 
 
 sox  infile  format  outfile   effect
-```
+</pre>
 
 参数(Gain用来表示信号的强度，是音频输入信号和输出信号差异的幅度,gain 控制的是「进入」声音设备的信号,volume是声音大小（响度）的值,volume控制的是从声音设备「输出」的声响大小.将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受)：     
-```console 
+<pre> 
 
 SPECIAL FILENAMES (infile only):                       
 "|program [options] ..." 使用管道             
@@ -84,7 +76,7 @@ FORMAT OPTIONS (fopts):输出文件将尽可能与输入文件具有相同的格
 EFFECTS:                        
 pitch[-q]shift [segment [search [overlap]]] 	改变音频的pitch音高。                 
 spectrogram 					画声谱图。-y是声谱图的y轴最大长度，-m是灰度。比如 -y  129  -m -r            
-```
+</pre>
 
 
 
@@ -92,75 +84,75 @@ spectrogram 					画声谱图。-y是声谱图的y轴最大长度，-m是灰度�
 # 常用命令
 #### 音频格式转换
 - sox自动读取音频文件的后缀名，并进行格式转换。a是mp3格式的文件，转换为b是wav格式的文件。
-```console
+<pre>
 sox a.mp3 b.wav
-```
+</pre>
 
 - sox把mp3格式转换为wav格式，并且附加effects:b.wav保存为单通道mono,16k采样率,音频淡入特效fade-in，normalization，并且保位深16bit.
-```console
+<pre>
 sox a.mp3 −b 16 b.wav channels 1 rate 16k fade 3 norm
-```
+</pre>
 
 - sox把二进制文件(无header信息)转换为wav文件，格式选项为：采样率为16k，有符号8bit整数，单通道。注意把raw文件转为其他格式需要指名格式，因为raw为二进制文件，不含有meta信息。(可理解为np.fromfile需要指明文件类型)
-```console
+<pre>
 sox −r 16k −e signed −b 8 −c 1 voice-memo.raw voice-memo.wav
-```
+</pre>
 #### 添加音频效果
 - 把音频速度调整为原来的1.027倍
-```console
+<pre>
 sox slow.wav fixed.wav speed 1.027
-```
+</pre>
 
 - 把音量调整为原来的1.027倍
-```console
+<pre>
 sox a.wav b.wav volume 1.027
 sox a.wav -v 1.027 b.wav
-```
+</pre>
 - 为避免截幅，可以通过 -n stat 命令获取音量增大的最大限制。
-```console
+<pre>
 sox a.wav -n stat -v | xargs -I {} sox a.wav b.wav volume {}
-```
+</pre>
 - 按照百分比调整音高
-```console
+<pre>
 sox a.wav b.wav pitch -31
-```
+</pre>
 
 -  sox 命令的 -M 选项将左右两个声道的单声道音频合并成一个双声道文件
-```console
+<pre>
 sox -M left.wav right.wav stereo.wav
-```
+</pre>
 
 - 对双声道文件中两个声道的均一化处理，将其输出为单声道音频：
-```console
+<pre>
 sox original.wav mono.wav channels 1
-```
+</pre>
 
 - 提取双声道音频文件中单个声道的数据并作为单声道音频输出,下面提取第二个声道(若是双声道则是指右声道) 或者融合多个声道(实例中融合前三个声道)。
-```console
+<pre>
 sox stereo.wav channel_2.wav remix 2
 sox stereo.wav channel_2.wav remix 1,2,3
-```
+</pre>
 
 - 画声谱图(a.wav的第一个声道采样率10k，y轴长度129，输出为a.png)
-```console
+<pre>
 sox  a.wav -n remix 1 rate 10k spectrogram  -y  129  -m -r -o  a.png
-```
+</pre>
 
 #### 合并音频(-m)
 
 - concat两个文件.
-```console
+<pre>
 sox short.wav long.wav longer.wav
-```
+</pre>
 
 - 合并混合music.mp3和voice.wav并保存成mixed.flac,合并音频（两个单声道混合后是双声道）
-```console
+<pre>
 sox −m music.mp3 voice.wav mixed.flac
-```
+</pre>
 
 #### 获取文件meta信息(soxi 或者 sox --i)
 - soxi 或 sox --i 命令可以通过解析音频文件的文件头，获取其元数据（如通道数，采样率，位深，持续时间，比特率等）。
-```console
+<pre>
 base [zhuxiaoxu@gpu66 wav_input]$ soxi multilingual_000000.wav
 Input File     : 'multilingual_000000.wav'
 Channels       : 1
@@ -170,10 +162,10 @@ Duration       : 00:00:14.11 = 225796 samples ~ 1058.42 CDDA sectors
 File Size      : 459k
 Bit Rate       : 260k
 Sample Encoding: 16-bit Signed Integer PCM
-```
+</pre>
 
 - sox inputfile -n stat命令获取某音频文件的统计信息
-```console
+<pre>
 (base) [zhuxiaoxu@gpu66 wave]$ sox 000030.wav -n stat 
 Samples read:             83600
 Length (seconds):      5.225000
@@ -190,7 +182,7 @@ Mean    delta:         0.013225
 RMS     delta:         0.028709
 Rough   frequency:         1285
 Volume adjustment:        2.805
-```
+</pre>
 
 
 ### 参考
