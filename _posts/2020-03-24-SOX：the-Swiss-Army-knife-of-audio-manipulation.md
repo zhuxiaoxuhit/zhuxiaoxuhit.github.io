@@ -25,8 +25,7 @@ sox命令处理流程：
 Input(s) -> Combiner -> Effects -> Output(s)
 
 sox命令的格式：
-官方文档给出的：
-<pre> 
+官方文档给出的：<pre>
 sox [global-options] [format-options] infile1                     
 [[format-options] infile2] ... [format-options] outfile               
 [effect [effect-options]] ...       
@@ -37,7 +36,7 @@ sox  infile  format  outfile   effect
 </pre>
 
 参数(Gain用来表示信号的强度，是音频输入信号和输出信号差异的幅度,gain 控制的是「进入」声音设备的信号,volume是声音大小（响度）的值,volume控制的是从声音设备「输出」的声响大小.将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受)：     
-<pre> 
+<pre>
 SPECIAL FILENAMES (infile only):                       
 "|program [options] ..." 使用管道             
 http://server/file       使用音频文件的url作为输入文件（URL支持需要wget是可用的）             
