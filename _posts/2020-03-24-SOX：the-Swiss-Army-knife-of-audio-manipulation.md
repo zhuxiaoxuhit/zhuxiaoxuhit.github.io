@@ -28,7 +28,9 @@ sox命令的格式：
 官方文档给出的：
 ```console
 sox [global-options] [format-options] infile1                     
+
 [[format-options] infile2] ... [format-options] outfile               
+
 [effect [effect-options]] ...       
 
 ```
