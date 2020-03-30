@@ -76,7 +76,7 @@ warmup的设置可以看出，学习率曲线是在global_step在warmup之前单
 warmup的设置，个人的经验是两到三个batch。
 
 #### python脚本的执行过程
-编译过程概述：   
+过程概述：    
 词法分析--->语法分析--->编译字节码文件--->执行    
 词法分析：关键字是否有误。    
 语法分析：语法是否有无。   
@@ -84,6 +84,15 @@ warmup的设置，个人的经验是两到三个batch。
 字节码是python虚拟机程序里对应的PyCodeObject对象。.pyc文件时字节码在磁盘上的表现形式。简单来说就是在编译代码的过程中，首先会将代码中的函数,类等对象分类处理，然后生成字节码文件。
 有了字节码文件，CPU可以直接识别字节码文件进行处理，接着python就可以执行。     
 修改.pyc文件不会对python的执行结果有影响，每次运行的时候都会覆盖修改的地方。
+
+#### c程序的执行过程
+过程概述：     
+预处理--->编译--->汇编--->链接     
+预处理(preprocessing)：include头文件以及宏定义替换成其真正的内容，预处理之后得到的仍然是文本文件，但文件体积会大很多。gcc -E -I./inc test.c -o test.i 生成.i文件。    
+编译(compilation)：将经过预处理之后的程序转换成特定汇编代码(assembly code)的过程,gcc -S -I./inc test.c -o test.s 生成.s汇编文件。
+汇编(assemble):汇编过程将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。gcc -c test.s -o test.o 生成.o二进制机器码文件。
+链接(linking):链接过程将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。gcc hello.c -o test.out 后生成.out可执行文件。
+
 
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
