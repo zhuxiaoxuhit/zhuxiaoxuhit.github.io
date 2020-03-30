@@ -114,8 +114,7 @@ from keras.utils import multi_gpu_model
 # 将 `model` 复制到 8 个 GPU 上。
 # 假定你的机器有 8 个可用的 GPU。
 parallel_model = multi_gpu_model(model, gpus=8)
-parallel_model.compile(loss='categorical_crossentropy',
-						optimizer='rmsprop')
+parallel_model.compile(loss='categorical_crossentropy',optimizer='rmsprop')
 
 # 这个 `fit` 调用将分布在 8 个 GPU 上。
 # 由于 batch size 为 256，每个 GPU 将处理 32 个样本。
