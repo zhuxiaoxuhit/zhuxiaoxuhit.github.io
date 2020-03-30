@@ -19,7 +19,7 @@ tags:
 优点：最突出的是加快训练。其他的之后再补充。
 指定某个可见：CUDA_VISIBLE_DEVICE = 0
 
-# Torch多卡训练
+# Torch
 #### 单卡
 指定卡号后把模型和数据存到gpu中。
 ```python
@@ -33,7 +33,7 @@ net =nn.DataParallel(net,device_ids=[2,3])
 net.to(device)
 ```
 
-# Tensorflow多卡训练
+# Tensorflow
 #### tensorflow-gpu指定cpu训练
 cpu只有一块，只能是0号
 ```python
@@ -106,7 +106,7 @@ with strategy.scope():
 model.fit(dataset, epochs=num_epochs)
 </pre>
 
-# Keras多卡训练
+# Keras
 数据并行包括在每个设备上复制一次目标模型，并使用每个模型副本处理不同部分的输入数据。Keras 有一个内置的实用函数 keras.utils.multi_gpu_model，它可以生成任何模型的数据并行版本，在多达 8 个 GPU 上实现准线性加速。    
 <pre>
 from keras.utils import multi_gpu_model
