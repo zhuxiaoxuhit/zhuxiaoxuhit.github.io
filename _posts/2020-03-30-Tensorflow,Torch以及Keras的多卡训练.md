@@ -1,34 +1,125 @@
 ---
 layout:     post
-title:      期望最大算法
-subtitle:   Expectation-maximization algorithm
+title:      Tensorflow,Torch以及Keras的多卡训练
+subtitle:   Multi-GPU Training of Tensorflow,Torch and Keras
 date:       2020-03-30
 author:     朱晓旭
 header-img: img/bg.jpg
 catalog: true
 tags:
-    - 期望最大算法
-    - EM算法
-    - 隐变量
-    - 最大似然估计
+    - Multi-GPU
+    - Tensorflow
+    - Torch
+    - Keras
+    - 数据并行(单机多卡)
 ---
-# 思路
-当使用最大似然估计通过X样本点数据集进行参数$\theta$的估计时，如果模型中存在隐变量z。
-原来的MLE是：
-<center>\theta_{MLE}=arg\max_{\theta}p(X|\theta)</center>
-现在有了隐变量z，则MLE是：
-<center>\theta_{MLE}=arg\max_{\theta}\sum_{z \in{Z}}p(X,z|\theta)</center>
-观测数据的似然没有直接的表达式，必须通过隐变量来计算，这意味着不能直接进行极大似然估计。
-如果我们知道每个样本对应的隐变量，那么可以直接通过极大似然估计得到样本生成的过程，即模型参数。
-问题的关键是我们不知道每个样本对应的隐变量，只能去大概地估计。这个估计的过程就是为每个样本分配它由每个隐变量生成的概率，即后验概率。
-跟真实的完整数据相比，后验概率将每个样本分成了若干份，这样我们就获得了另一种形式的"完整数据"。把一个样本X分成若干份，每份贡献一部分对数似然，这个样本的对数似然是每部分对数似然之和：
-<center>\sum_{z \in{Z}}p(X,z|\theta^old)ln(x,z|\theta)</center>
+# 多卡训练
+数据并行：不同的GPU输入不同的数据，运行相同的完整的模型。    
+优点：最突出的是加快训练。其他的之后再补充。
+指定某个可见：CUDA_VISIBLE_DEVICE = 0
+
+# Torch多卡训练
+#### 单卡
+指定卡号后把模型和数据存到gpu中。
+```python
+device= torch.device("cuda:0")
+net.to(device)
+```
+#### 多卡
+```python
+device= torch.device("cuda")
+net =nn.DataParallel(net,device_ids=[2,3])
+net.to(device)
+```
+
+# Tensorflow多卡训练
+#### tensorflow-gpu指定cpu训练
+cpu只有一块，只能是0号
+```python
+with tf.device('/cpu:0'):
+	v1 = tf.constant([1.0, 2.0, 3.0], shape=[3], name='v1')
+	v2 = tf.constant([1.0, 2.0, 3.0], shape=[3], name='v2')
+	sumV12 = v1 + v2
+    
+	with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+		print sess.run(sumV12)
+```
+#### tensorflow-gpu指定某一gpu训练
+相当于CUDA_VISIBLE_DEVICE = 3
+```python
+with tf.device('/gpu:3'):
+	v1 = tf.constant([1.0, 2.0, 3.0], shape=[3], name='v1')
+	v2 = tf.constant([1.0, 2.0, 3.0], shape=[3], name='v2')
+	sumV12 = v1 + v2
+    
+	with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+		print sess.run(sumV12)
+```
+#### tensorflow-gpu多卡训练
+tf.distribute.MirroredStrategy 是一种简单且高性能的，数据并行的同步式分布式策略，主要支持多个 GPU 在同一台主机上训练。使用这种策略时，我们只需实例化一个 MirroredStrategy 策略:    
+```python
+strategy = tf.distribute.MirroredStrategy()
+```
+并将模型构建的代码放入 strategy.scope() 的上下文环境中:
+```python
+with strategy.scope():
+	# 模型构建代码
+```
+可以在参数中指定设备，如:
+```python
+strategy = tf.distribute.MirroredStrategy(devices=["/gpu:0", "/gpu:1"])
+```
+即指定只使用第 0、1 号 GPU 参与分布式策略。     
+
+wiki中的例子：
+<pre>
+import tensorflow as tf
+import tensorflow_datasets as tfds
+
+num_epochs = 5
+batch_size_per_replica = 64
+learning_rate = 0.001
+
+strategy = tf.distribute.MirroredStrategy()
+	#输出设备数量
+	print('Number of devices: %d' % strategy.num_replicas_in_sync)  
+	batch_size = batch_size_per_replica * strategy.num_replicas_in_sync
+
+# 载入数据集并预处理
+def resize(image, label):
+	image = tf.image.resize(image, [224, 224]) / 255.0
+	return image, label
+
+# 使用 TensorFlow Datasets 载入猫狗分类数据集，详见“TensorFlow Datasets数据集载入”一章
+dataset = tfds.load("cats_vs_dogs", split=tfds.Split.TRAIN, as_supervised=True)
+dataset = dataset.map(resize).shuffle(1024).batch(batch_size)
+
+with strategy.scope():
+	model = tf.keras.applications.MobileNetV2()
+	model.compile(
+	optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
+	loss=tf.keras.losses.sparse_categorical_crossentropy,
+	metrics=[tf.keras.metrics.sparse_categorical_accuracy]
+	)
+
+model.fit(dataset, epochs=num_epochs)
+</pre>
+
+# Keras多卡训练
+数据并行包括在每个设备上复制一次目标模型，并使用每个模型副本处理不同部分的输入数据。Keras 有一个内置的实用函数 keras.utils.multi_gpu_model，它可以生成任何模型的数据并行版本，在多达 8 个 GPU 上实现准线性加速。    
+<pre>
+from keras.utils import multi_gpu_model
+
+# 将 `model` 复制到 8 个 GPU 上。
+# 假定你的机器有 8 个可用的 GPU。
+parallel_model = multi_gpu_model(model, gpus=8)
+parallel_model.compile(loss='categorical_crossentropy',
+						optimizer='rmsprop')
+
+# 这个 `fit` 调用将分布在 8 个 GPU 上。
+# 由于 batch size 为 256，每个 GPU 将处理 32 个样本。
+parallel_model.fit(x, y, epochs=20, batch_size=256)
+</pre>
 
 
-本质：
-因数据缺失而不能直接使用MLE方法的时候(MLE在数学上是解方程；数理统计上是叫极大似然；概率论叫条件概率。数学上没有解析解)，
-我们可以用这个缺失数据的期望值来代替缺失的数据，而这个缺失的数据期望值和它的概率分布有关。那么我们可以通过对似然函数关于缺失数据期望的最大化，来逼近原函数的极大值。
 
-### 参考
-- [机器学习-周志华](https://github.com/Mikoto10032/DeepLearning/blob/master/books/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%91%A8%E5%BF%97%E5%8D%8E.pdf)
-- [统计学习方法-李航](http://www.dgt-factory.com/uploads/2018/07/0725/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95.pdf)
