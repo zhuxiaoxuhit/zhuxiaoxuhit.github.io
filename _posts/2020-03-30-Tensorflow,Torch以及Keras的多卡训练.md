@@ -15,14 +15,14 @@ tags:
 # 思路
 当使用最大似然估计通过X样本点数据集进行参数$\theta$的估计时，如果模型中存在隐变量z。
 原来的MLE是：
-<center>$$\theta_{MLE}=arg\max_{\theta}p(X|\theta)$$</center>
+<center>\theta_{MLE}=arg\max_{\theta}p(X|\theta)</center>
 现在有了隐变量z，则MLE是：
-<center>$$\theta_{MLE}=arg\max_{\theta}\sum_{z \in{Z}}p(X,z|\theta)$$</center>
+<center>\theta_{MLE}=arg\max_{\theta}\sum_{z \in{Z}}p(X,z|\theta)</center>
 观测数据的似然没有直接的表达式，必须通过隐变量来计算，这意味着不能直接进行极大似然估计。
 如果我们知道每个样本对应的隐变量，那么可以直接通过极大似然估计得到样本生成的过程，即模型参数。
 问题的关键是我们不知道每个样本对应的隐变量，只能去大概地估计。这个估计的过程就是为每个样本分配它由每个隐变量生成的概率，即后验概率。
 跟真实的完整数据相比，后验概率将每个样本分成了若干份，这样我们就获得了另一种形式的"完整数据"。把一个样本X分成若干份，每份贡献一部分对数似然，这个样本的对数似然是每部分对数似然之和：
-<center>$$\sum_{z \in{Z}}p(X,z|\theta^old)ln(x,z|\theta)$$</center>
+<center>\sum_{z \in{Z}}p(X,z|\theta^old)ln(x,z|\theta)</center>
 
 
 本质：
