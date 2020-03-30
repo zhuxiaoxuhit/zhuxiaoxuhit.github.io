@@ -75,7 +75,15 @@ warmup的设置可以看出，学习率曲线是在global_step在warmup之前单
 这么做的好处是，如果训练开始模型还没有见过所有的数据的时候就以高学习率进行学习，可能会陷入鞍点。      
 warmup的设置，个人的经验是两到三个batch。
 
-
+#### python脚本的执行过程
+编译过程概述：   
+词法分析--->语法分析--->编译字节码文件--->执行    
+词法分析：关键字是否有误。    
+语法分析：语法是否有无。   
+编译字节码文件：python中有一个内置函数compile(),其具体为compile(source,filename,mode)。它可以将源文件编译成codeobject。import dis模块进行反编译，发现python字节码其实是模仿的x86的汇编，将代码编译成一条一条的指令交给一个虚拟的cpu去执行
+字节码是python虚拟机程序里对应的PyCodeObject对象。.pyc文件时字节码在磁盘上的表现形式。简单来说就是在编译代码的过程中，首先会将代码中的函数,类等对象分类处理，然后生成字节码文件。
+有了字节码文件，CPU可以直接识别字节码文件进行处理，接着python就可以执行。     
+修改.pyc文件不会对python的执行结果有影响，每次运行的时候都会覆盖修改的地方。
 
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
