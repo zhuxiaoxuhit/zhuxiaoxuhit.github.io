@@ -133,7 +133,11 @@ foo()
 把一个getter方法变成属性，只需要加上@property就可以了
 
 
-
+#### 归一化(标准化)
+z-score标准化：原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1。
+<center>$$z = {x - \mu}\frac{\sigma} $$</center>
+反归一化：
+<center>$$x = z * {\sigma} + {\mu} $$</center>
 
 
 
