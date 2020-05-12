@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Tensorflow,Torch以及Keras的多卡训练
-subtitle:   Multi-GPU Training of Tensorflow,Torch and Keras
+title:      Python多进程通过Queue实现训练数据的生产者消费者模式
+subtitle:   Training skills
 date:       2020-03-30
 author:     朱晓旭
 header-img: img/bg.jpg
