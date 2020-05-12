@@ -7,11 +7,9 @@ author:     朱晓旭
 header-img: img/bg.jpg
 catalog: true
 tags:
-    - Multi-GPU
-    - Tensorflow
-    - Torch
-    - Keras
-    - 数据并行(单机多卡)
+    - multiprocessing
+    - queue
+    - 生产者消费者模式
 ---
 # 多次使用该模式进行训练，留坑以后填写
 
