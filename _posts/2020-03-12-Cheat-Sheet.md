@@ -113,7 +113,7 @@ foo()                   # 执行foo()就相当于执行 wrapper()
 <pre>
 
 @是装饰器的语法糖
-</pre>
+<pre>
 def use_logging(func):
 
 def wrapper():
@@ -126,7 +126,7 @@ def foo():
 	print("i am foo")
 
 foo()
-<pre>
+</pre>
 
 #### @property decorators 和 func.setter , func.getter
 本质是：使用装饰器实现对属性进行控制。
