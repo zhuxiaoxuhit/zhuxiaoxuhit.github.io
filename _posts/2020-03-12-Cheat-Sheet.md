@@ -139,8 +139,11 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 反归一化：
 <center>$$x = z * {\sigma} + {\mu} $$</center>
 
-
-
+#### 声音与信号
+一小段音频经离散余弦变换DCT(通常是采用FFT)得到频谱spectrum。横坐标频率，纵坐标可以是振幅也可以是相位。			
+短时傅里叶变换STFT：对整段音频进行加窗，对每窗音频进行DCT(FFT)。			
+对整段音频进行短时傅里叶变换得到线性谱，是复数。对线性谱取绝对值np.abs() 得到线性振幅频率谱magnitude of frequency，取np.angle()得到线性相位频率谱phase of frequency。			
+对线性幅频谱平方得到 线性幅频功率密度谱linear-frequency power spectral density(psd).		
 
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
