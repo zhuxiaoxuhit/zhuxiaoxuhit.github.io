@@ -28,12 +28,14 @@ generator是由dilated前馈卷积神经网络组成，输入是单独的模型�
 # Alignner
 Aligner由十组Dilated Conv Block组成,Dilated Conv Block由dilated conv1D以及ConditionalBatchNorm组成。Dilated Conv Block的输入为音素或文本，输出隐层用于预测每个归一化后的音素或文本对应的长度(时长),
 用gaussian kernel 进行differentiable monotonic interpolation scheme，输出作为对齐的隐层。该隐层信息将作为Generator的输入。
-！[](/img/eats_1.JPG)
+
+![](/img/eats_1.JPG)
 
 # Generator
 EATS使用GAN-TTS generator作为生成器。输入为200hz的对齐后的隐层(Aligner的输出)，输
 出为24khz的音频。Generator由conv1D，7个GBlock，conv1D组成。GBlock见下图。
-！[](/img/eats_2.JPG)
+
+![](/img/eats_2.JPG)
 
 # Discriminator
 判别器由两部分组成：Random window discriminators和Spectrogram discriminator。
@@ -48,19 +50,19 @@ EATS使用GAN-TTS generator作为生成器。输入为200hz的对齐后的隐层
 # Spectrogram prediction loss and dynamic time warping
 在应用了上述的所有策略以及模型设计后，作者发现训练无法收敛。训练开始的时候，2s的语音片段完全不对应，会使GAN忽略aligner的输出，训练无法进行。因为discriminator是unconditional的，它
 不知道输出的音频对应的文本或者音素。因此除了GAN的loss外，作者设计了下面的loss:
-！[](/img/eats_3.JPG)
+![](/img/eats_3.JPG)
 对整个训练语音片段2s进行计算所有通道的整个时间的log-mel spectrogram的L1范数的和(公式中除以通道数)。以此实现加速2ms片段的对齐。需要注意的是，这个loss和log-mel spectrogram discriminator loss是不同的。
 同时作者提出了Dynamic time warping的策略改进了spectrogram prediction loss。      
 整体思路是：真实语音和预测语音理论上应该也是在时间轴上是对齐的。下面两种对齐路线中，完全对齐的路线是第一个。    
-！[](/img/eats_4.JPG)
+![](/img/eats_4.JPG)
 因此对第二种和第三种加以惩罚，走1路线时，w=0；走2或者3路线时，w=1.   
-！[](/img/eats_5.JPG)
-！[](/img/eats_6.JPG)
+![](/img/eats_5.JPG)
+![](/img/eats_6.JPG)
 # G loss设计
 除了G loss以及spectrogram prediction loss，还添加了 aligner length loss：
-！[](/img/eats_7.JPG)
+![](/img/eats_7.JPG)
 因此最终的G loss为：
-！[](/img/eats_8.JPG)
+![](/img/eats_8.JPG)
 
 # 参考 
 - [HIGH FIDELITY SPEECH SYNTHESIS WITH ADVERSARIAL NETWORKS](https://arxiv.org/pdf/1909.11646.pdf)
