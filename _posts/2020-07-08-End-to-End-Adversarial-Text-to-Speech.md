@@ -66,4 +66,4 @@ EATS使用GAN-TTS generator作为生成器。输入为200hz的对齐后的隐层
 
 # 参考 
 - [HIGH FIDELITY SPEECH SYNTHESIS WITH ADVERSARIAL NETWORKS](https://arxiv.org/pdf/1909.11646.pdf)
-- [End-to-End Adversarial Text-to-Speech](https://github.com/zhuxiaoxuhit/DeepLearning/blob/master/books/%E6%9D%8E%E8%88%AA-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/%E7%BB%9F%E8
+- [End-to-End Adversarial Text-to-Speech](https://arxiv.org/pdf/2006.03575.pdf)
