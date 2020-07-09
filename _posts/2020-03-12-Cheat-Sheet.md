@@ -133,11 +133,14 @@ foo()
 把一个getter方法变成属性，只需要加上@property就可以了
 
 
-#### 归一化(标准化)
+#### 归一化(标准化)以及批量归一化(BN)
 z-score标准化：原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1。
 <center>$$z = \frac{x - {\mu}}{\sigma} $$</center>
 反归一化：
 <center>$$x = z * {\sigma} + {\mu} $$</center>
+批量归一化(BN):以mini-batch为单位对数据进行whitening preprocessing可以加快训练以及收敛
+<center>$$z = \boldsymbol{\gamma} \odot{\frac{x - {\mu}}{\sqrt{{\sigma}^2 - {\epsilon}} }}+ \boldsymbol{\beta} $$</center>
+其中γ和β都是可训练参数。有趣的是，若是人为控制该组参数，可以控制神经网络的输出风格(例如可以进行讲话风格或者绘画风格的学习)。
 
 #### 声音与信号
 一小段音频经离散余弦变换DCT(通常是采用FFT)得到频谱spectrum。横坐标频率，纵坐标可以是振幅也可以是相位。			
