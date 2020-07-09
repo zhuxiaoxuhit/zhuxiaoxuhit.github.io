@@ -29,7 +29,7 @@ tags:
 ##  Attention
 <center>$$\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t$$</center>
 <center>$$\alpha_{t' t} = \frac{\exp(e_{t' t})}{ \sum_{k=1}^T \exp(e_{t' k}) },\quad t=1,\ldots,T$$</center>
-<center>$$e_{t' t} = a(\boldsymbol{s}_{t' - 1}, \boldsymbol{h}_t)$$</center>
+<center>$$ e__{t' t} = a(\boldsymbol{{s}___{t' - 1}}, \boldsymbol{{h}__t}).  $$</center>
 e.g.
 <center>$$a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h})$$</center>
 ##  CNN
@@ -110,7 +110,7 @@ print('i am foo')
 
 foo = use_logging(foo)  # 因为装饰器 use_logging(foo) 返回的时函数对象 wrapper，这条语句相当于  foo = wrapper
 foo()                   # 执行foo()就相当于执行 wrapper()
-<pre>
+</pre>
 
 @是装饰器的语法糖
 <pre>
@@ -144,6 +144,13 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 短时傅里叶变换STFT：对整段音频进行加窗，对每窗音频进行DCT(FFT)。			
 对整段音频进行短时傅里叶变换得到线性谱，是复数。对线性谱取绝对值np.abs() 得到线性振幅频率谱magnitude of frequency，取np.angle()得到线性相位频率谱phase of frequency。			
 对线性幅频谱平方得到 线性幅频功率密度谱linear-frequency power spectral density(psd).		
+
+#### ctag + vim for cpp
+```console
+ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q
+```
+vim中通过按键 Ctrl + ] 可以跳转到对应的定义位置，命令 Ctrl + o 可以回退到原来的位置.
+ctags --list-kinds=c++ 可列出C++支持生成的标签类型的全量列表.
 
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
