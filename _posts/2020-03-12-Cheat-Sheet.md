@@ -29,7 +29,7 @@ tags:
 ##  Attention
 <center>$$\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t$$</center>
 <center>$$\alpha_{t' t} = \frac{\exp(e_{t' t})}{ \sum_{k=1}^T \exp(e_{t' k}) },\quad t=1,\ldots,T$$</center>
-<center>$$ e__{t' t} = a(\boldsymbol{{s}___{t' - 1}}, \boldsymbol{{h}__t}).  $$</center>
+<center>$$ e_{t' t} = a(\boldsymbol{s}_{t' - 1}, \boldsymbol{h}_t). $$</center>
 e.g.
 <center>$$a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h})$$</center>
 ##  CNN
