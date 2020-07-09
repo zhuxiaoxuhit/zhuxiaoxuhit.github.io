@@ -139,7 +139,7 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 反归一化：
 <center>$$x = z * {\sigma} + {\mu} $$</center>
 批量归一化(BN):以mini-batch为单位对数据进行whitening preprocessing可以加快训练以及收敛
-<center>$$z = \boldsymbol{\gamma} \odot{\frac{x - {\mu}}{\sqrt{{\sigma}^2 - {\epsilon}} }}+ \boldsymbol{\beta} $$</center>
+<center>$$z = \boldsymbol{\gamma} \odot{\frac{x - {\mu}}{\sqrt{{\sigma}^2 - {\epsilon}} }}+ \boldsymbol{\beta}$$</center>
 其中γ和β都是可训练参数。有趣的是，若是人为控制该组参数，可以控制神经网络的输出风格(例如可以进行讲话风格或者绘画风格的学习)。
 
 #### 声音与信号
