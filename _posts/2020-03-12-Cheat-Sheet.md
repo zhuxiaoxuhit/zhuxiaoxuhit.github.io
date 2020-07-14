@@ -155,6 +155,9 @@ ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q
 vim中通过按键 Ctrl + ] 可以跳转到对应的定义位置，命令 Ctrl + o 可以回退到原来的位置.
 ctags --list-kinds=c++ 可列出C++支持生成的标签类型的全量列表.
 
+#### c++内存管理
+![](/img/cpp_memory.png)
+
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
 
