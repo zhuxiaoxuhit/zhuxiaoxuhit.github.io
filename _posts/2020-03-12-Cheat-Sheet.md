@@ -158,6 +158,9 @@ ctags --list-kinds=c++ 可列出C++支持生成的标签类型的全量列表.
 #### c++内存管理
 ![](/img/cpp_memory.png)
 
+#### μ-law transform and inverse transform
+μ-law transform: 首先把wav映射到(-1,1)  
+<center>$$ F(x) = sgn(x)\frac {ln(1+\mu \left| x \right|)} {ln(1+\mu)} $$</center>
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
 
