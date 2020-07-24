@@ -21,6 +21,8 @@ tags:
 <center>$$\tilde{\boldsymbol{C}}_t = \text{tanh}(\boldsymbol{X}_t \boldsymbol{W}_{xc} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hc} + \boldsymbol{b}_c)$$</center>
 <center>$$\boldsymbol{C}_t = \boldsymbol{F}_t \odot \boldsymbol{C}_{t-1} + \boldsymbol{I}_t \odot \tilde{\boldsymbol{C}}_t$$</center>
 <center>$$\boldsymbol{H}_t = \boldsymbol{O}_t \odot \text{tanh}(\boldsymbol{C}_t)$$</center>
+> 理解：输入门，遗忘门，输出门 在0到1之间，候选记忆细胞在-1到1之间。候选记忆细胞代表的是当前的短期记忆，输入门代表的是多少短期记忆或者说候选记忆输入到记忆细胞;
+遗忘门代表的是遗忘上一个记忆细胞带来的长期记忆；输出门代表的当前的输出。需要注意，候选记忆细胞代表的是短期记忆，上一个时刻的记忆细胞代表的是长期记忆，通过遗忘门和输入门来控制短期记忆和长期记忆。  
 ##  GRU
 <center>$$\boldsymbol{R}_t = \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xr} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hr} + \boldsymbol{b}_r)$$</center>
 <center>$$\boldsymbol{Z}_t = \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xz} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hz} + \boldsymbol{b}_z)$$</center>
