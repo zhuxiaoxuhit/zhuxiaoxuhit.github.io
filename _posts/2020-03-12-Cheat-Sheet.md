@@ -145,6 +145,10 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 <center>$$z = {\boldsymbol{\gamma}}  {\odot}   \frac   {  x - {\mu}  }    {\sqrt{        {\sigma}^{2} - {\epsilon}   }   }     + \boldsymbol{\beta}$$</center>
 其中γ和β都是可训练参数。有趣的是，若是人为控制该组参数，可以控制神经网络的输出风格(例如可以进行讲话风格或者绘画风格的学习)。
 
+#### MinMaxScaler标准化
+transform:
+<center>$$\boldsymbol{X}t = \frac{\boldsymbol{X}-\boldsymbol{X.min(axis=0)}}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}}(max-min)+min$$</center>
+
 #### 声音与信号
 一小段音频经离散余弦变换DCT(通常是采用FFT)得到频谱spectrum。横坐标频率，纵坐标可以是振幅也可以是相位。			
 短时傅里叶变换STFT：对整段音频进行加窗，对每窗音频进行DCT(FFT)。			
