@@ -23,6 +23,8 @@ tags:
 <center>$$\boldsymbol{H}_t = \boldsymbol{O}_t \odot \text{tanh}(\boldsymbol{C}_t)$$</center>
 > 理解：输入门，遗忘门，输出门 在0到1之间，候选记忆细胞在-1到1之间。候选记忆细胞代表的是当前的短期记忆，输入门代表的是多少短期记忆或者说候选记忆输入到记忆细胞;
 遗忘门代表的是遗忘上一个记忆细胞带来的长期记忆；输出门代表的当前的输出。需要注意，候选记忆细胞代表的是短期记忆，上一个时刻的记忆细胞代表的是长期记忆，通过遗忘门和输入门来控制短期记忆和长期记忆。  
+LSTMCell运算:
+<center>$$(outputs,({\boldsymbol{H}}t,{\boldsymbol{C}}_t)) = LSTMCell({\boldsymbol{X}}t,{\boldsymbol{H}}t-1,{\boldsymbol{C}}t-1) $$</center>
 
 ##  GRU
 <center>$$\boldsymbol{R}_t = \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xr} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hr} + \boldsymbol{b}_r)$$</center>
@@ -35,6 +37,10 @@ tags:
 <center>$$ e_{t' t} = a(\boldsymbol{s}_{t' - 1}, \boldsymbol{h}_t). $$</center>
 e.g.
 <center>$$a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h})$$</center>
+AttentionCell运算:
+<center>$$(\boldsymbol{c}{t'},\boldsymbol{c}{t'}) = AttentionCell(\boldsymbol{S}t,\boldsymbol{H}{0...T}) $$</center>
+<center>$$(\boldsymbol{c}{t'},\sum{\boldsymbol{c}{0...t'}}) = AttentionCell(\boldsymbol{S}t,\boldsymbol{H}{0...T}) $$</center>
+
 ##  CNN
 #### 2D 
 Input:10x10x3(长x宽x输入维度)     
@@ -146,14 +152,15 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 其中γ和β都是可训练参数。有趣的是，若是人为控制该组参数，可以控制神经网络的输出风格(例如可以进行讲话风格或者绘画风格的学习)。
 
 #### MinMaxScaler标准化
-Transform:
-<center>$$\boldsymbol{X}t = \frac{\boldsymbol{X}-\boldsymbol{X.min(axis=0)}}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}}(max-min)+min$$</center>
+基本公式:
+<center>$$ \frac{\boldsymbol{X}-\boldsymbol{X.min(axis=0)}}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}} = \frac{}{}  (max-min)+min$$</center>
 scale:[min,max]是标准化后的范围   
 逆变换时需要的数据：
-<center>$$std = \boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}$$</center>
-<center>$$min = \boldsymbol{X.min(axis=0)}$$</center>
+<center>$$\boldsymbol{std} = \frac{max-min}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}}$$</center>
+<center>$$\boldsymbol{min1} = min - \boldsymbol{X.min(axis=0)}\boldsymbol{std}$$</center>
+Transform:
 inverse transform:  
-<center>$$\boldsymbol{X}t = \frac{\boldsymbol{Y}-min}{max-min}(\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)})+\boldsymbol{X.min(axis=0)}$$</center>
+<center>$$\boldsymbol{X} = \frac{x - \boldsymbol{min1}}{}\boldsymbol{std}$$</center>
 
 #### 声音与信号
 一小段音频经离散余弦变换DCT(通常是采用FFT)得到频谱spectrum。横坐标频率，纵坐标可以是振幅也可以是相位。			
@@ -178,6 +185,5 @@ inverse transform:
 <center>$$ F^{-1}(x) = sgn(y)(1/y)((1+\mu)^{\left| y \right|}-1), {-1}\leq{y}\leq{1} $$</center>
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
-
 
 
