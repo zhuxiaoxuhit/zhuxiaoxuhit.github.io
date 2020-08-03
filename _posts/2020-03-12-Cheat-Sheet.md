@@ -153,14 +153,15 @@ z-score标准化：原始数据的均值（mean）和标准差（standard deviat
 
 #### MinMaxScaler标准化
 基本公式:
-<center>$$ \frac{\boldsymbol{X}-\boldsymbol{X.min(axis=0)}}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}} = \frac{}{}  (max-min)+min$$</center>
+<center>$$ \frac{\boldsymbol{X}-\boldsymbol{X.min(axis=0)}}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}} = \frac{x-min}{max-min}$$</center>
 scale:[min,max]是标准化后的范围   
 逆变换时需要的数据：
 <center>$$\boldsymbol{std} = \frac{max-min}{\boldsymbol{X.max(axis=0)}-\boldsymbol{X.min(axis=0)}}$$</center>
 <center>$$\boldsymbol{min1} = min - \boldsymbol{X.min(axis=0)}\boldsymbol{std}$$</center>
 Transform:
+<center>$$x = \boldsymbol{X}\boldsymbol{std} + \boldsymbol{min1}$$</center>
 inverse transform:  
-<center>$$\boldsymbol{X} = \frac{x - \boldsymbol{min1}}{}\boldsymbol{std}$$</center>
+<center>$$\boldsymbol{X} = \frac{x - \boldsymbol{min1}}{\boldsymbol{std}}$$</center>
 
 #### 声音与信号
 一小段音频经离散余弦变换DCT(通常是采用FFT)得到频谱spectrum。横坐标频率，纵坐标可以是振幅也可以是相位。			
