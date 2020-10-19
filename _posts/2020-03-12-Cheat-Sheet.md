@@ -23,7 +23,8 @@ tags:
 <center>$$\boldsymbol{H}_t = \boldsymbol{O}_t \odot \text{tanh}(\boldsymbol{C}_t)$$</center>
 > 理解：输入门，遗忘门，输出门 在0到1之间，候选记忆细胞在-1到1之间。候选记忆细胞代表的是当前的短期记忆，输入门代表的是多少短期记忆或者说候选记忆输入到记忆细胞;
 遗忘门代表的是遗忘上一个记忆细胞带来的长期记忆；输出门代表的当前的输出。需要注意，候选记忆细胞代表的是短期记忆，上一个时刻的记忆细胞代表的是长期记忆，通过遗忘门和输入门来控制短期记忆和长期记忆。  
-LSTMCell运算:
+
+LSTMCell运算:    
 <center>$$(outputs,({\boldsymbol{H}}t,{\boldsymbol{C}}_t)) = LSTMCell({\boldsymbol{X}}t,{\boldsymbol{H}}t-1,{\boldsymbol{C}}t-1) $$</center>
 
 ##  GRU
@@ -31,8 +32,11 @@ LSTMCell运算:
 <center>$$\boldsymbol{Z}_t = \sigma(\boldsymbol{X}_t \boldsymbol{W}_{xz} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hz} + \boldsymbol{b}_z)$$</center>
 <center>$$\tilde{\boldsymbol{H}}_t = \text{tanh}(\boldsymbol{X}_t \boldsymbol{W}_{xh} + \left(\boldsymbol{R}_t \odot \boldsymbol{H}_{t-1}\right) \boldsymbol{W}_{hh} + \boldsymbol{b}_h)$$</center>
 <center>$$\boldsymbol{H}_t = ( 1 - \boldsymbol{Z}_t ) \odot \boldsymbol{H}_{t-1}  + \boldsymbol{Z}_t  \odot \tilde{\boldsymbol{H}}_t$$</center>
+
 > 理解: 重置门在计算候选记忆细胞使用，理解为重置之前的记忆。如果重置门为1，R和H_t-1按元素相乘结果是H_t-1,候选记忆细胞会保留之前的记忆；如果重置门为0，R和H_t-1按元素相乘结果是0,候选记忆细胞会彻底遗忘之前的记忆；更新们在计算H的时候使用，它用来计算上一个隐藏状态有多少信息被保留下来，且新的内容(候选记忆细胞)有多少需要被添加(被记忆)，更新门为1，候选记忆细胞会全部流入当前的H，并且不会保留上一时刻隐藏状态；更新们为0，会完全保留上一时刻隐藏状态，并且不会保留记忆细胞。
+
 > 注意: 上一时刻隐藏状态在流入到当前时刻隐藏状态时，要经过重置门去求解候选记忆细胞，同时也会经过更新门去求解多少上一时刻隐藏状态被更新到下一时刻隐藏状态。
+
 
 ##  Attention
 <center>$$\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t$$</center>
