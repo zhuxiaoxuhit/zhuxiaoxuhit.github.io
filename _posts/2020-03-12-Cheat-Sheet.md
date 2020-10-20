@@ -37,7 +37,7 @@ LSTMCell运算:
 
 > 注意: 上一时刻隐藏状态在流入到当前时刻隐藏状态时，要经过重置门去求解候选记忆细胞，同时也会经过更新门去求解多少上一时刻隐藏状态被更新到下一时刻隐藏状态。
 
-> 注意：在运算时，tensorflow等通常是把循环单元，非循环单元作为整体参与运算。以keras为例，gru的参数为[[W_xz,W_xr,W_xh],[W_hz,W_hr,W_hh],[b_z,b_r,b_h]]，即把三个非循环单元cat在一起，三个循环单元cat在一起，三个偏置cat在一起参与运算。  
+> 注意：在运算时，tensorflow等通常是把循环单元，非循环单元作为整体参与运算。以keras为例，gru的参数为[[W_xz,W_xr,W_xh],[W_hz,W_hr,W_hh],[b_z,b_r,b_h]]或者[[W_xz,W_xr,W_xh],[W_hz,W_hr,W_hh],[[b_xz,b_xr,b_xh],[b__hz,b_hr,b_hh]]]，即把三个非循环单元cat在一起，三个循环单元cat在一起，三个偏置cat在一起参与运算。实例中给了两个版本是根据：循环单元和非循环单元是否共享偏置(由reset_after参数控制)。  
 
 ##  Attention
 <center>$$\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t$$</center>
