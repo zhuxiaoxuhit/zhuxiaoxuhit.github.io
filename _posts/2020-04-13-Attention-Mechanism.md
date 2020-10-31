@@ -7,9 +7,7 @@ author:     朱晓旭
 header-img: img/bg.jpg
 catalog: true
 tags:
-    - sox
-    - audio manipulation
-    - 音频处理  
+    - attention  
 ---
 
 
