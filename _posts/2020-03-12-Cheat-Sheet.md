@@ -12,7 +12,6 @@ tags:
     - LSTM
     - GRU
     - Attention	
-	- CPU推理加速
 ---
 
 ## LSTM
