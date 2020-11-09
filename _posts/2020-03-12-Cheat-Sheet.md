@@ -12,6 +12,7 @@ tags:
     - LSTM
     - GRU
     - Attention	
+	- CPU推理加速
 ---
 
 ## LSTM
@@ -192,6 +193,15 @@ ctags --list-kinds=c++ 可列出C++支持生成的标签类型的全量列表.
 <center>$$ F(x) = sgn(x)\frac {ln(1+\mu \left| x \right|)} {ln(1+\mu)} , {-1}\leq{x}\leq{1} $$</center>
 inverse transform:
 <center>$$ F^{-1}(x) = sgn(y)(1/y)((1+\mu)^{\left| y \right|}-1), {-1}\leq{y}\leq{1} $$</center>
+
+#### CPU推理加速
+1. 指令集优化. -mavx2 -mavx512f
+2. 调用加速运算库. -lmkl_rt (Math Kernel Library,sigmoid激活函数、三角函数等的加速) -dnnl (矩阵乘加速)  
+3. OpenMP使用多线程(Open Multi-Processing). -fopenmp 
+4. 编译时的普通优化. -O3
+5. 16bit量化，INT8量化. 需要推理工具的软件支持以及cpu的硬件支持  
+6. 网络稀疏化,网络裁剪
+
 #### 参考
 - [pytorch之nn.Conv1d详解](https://www.cnblogs.com/pythonClub/p/10421799.html)
 
