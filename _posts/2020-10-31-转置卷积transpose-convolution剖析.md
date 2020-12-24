@@ -35,14 +35,17 @@ stride = 4
 ```
 
 首先分析卷积过程(from output to input):
+```
 [8,4(stride)] x [(weights),1] -> [8,1]
 input channel=4可得：
 [8,16(stride, input channel)] x [16(input channel, stride),1] -> [8,1]
 output channel=4可得：
 [8,16(stride,input channel)] x [16(input channel, stride),4(output channel)] -> [8,4]
-
+```
 转置卷积为卷积的逆运算，因此,from input to output:
+```
 [8,4]x[4,16] -> [8,16]
+```
 
 ### 代码
 ```python
