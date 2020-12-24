@@ -16,9 +16,9 @@ tags:
 # 一维转置卷积矩阵乘分析
 ### 输入输出信信息
 ```
-input: [batch size, input channel, inputs dims]
-filter(kernel): [output channel, input channel, weights]
-output: [batch size, output channel, outputs dims]
+input: [batch size, input channel, input length]
+weight(kernel): [output channel, input channel, kenel size]
+output: [batch size, output channel, outputs length]
 ```
 Torch转置卷积语句(以Torch为例)
 ```
@@ -29,18 +29,18 @@ y = torch.nn.functional.conv_transpose1d(x,f,stride)
 我们给出以下参数:
 ```
 input: [1,4,8]
-filter: [4,4,4]
+weight: [4,4,4]
 output: [1,4,32]
 stride = 4
 ```
 
 首先分析卷积过程(from output to input):
 ```
-[8,4(stride)] x [(weights),1] -> [8,1]
+[8,4(stride)] x [4(kenel_size),1] -> [8,1]
 input channel=4可得：
-[8,16(stride, input channel)] x [16(input channel, stride),1] -> [8,1]
+[8,16(stride, input channel)] x [16(input channel, kernel size),1] -> [8,1]
 output channel=4可得：
-[8,16(stride,input channel)] x [16(input channel, stride),4(output channel)] -> [8,4]
+[8,16(stride,input channel)] x [16(input channel, kenrnel size),4(output channel)] -> [8,4]
 ```
 转置卷积为卷积的逆运算，因此,from input to output:
 ```
