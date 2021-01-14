@@ -1,10 +1,10 @@
 ---
 layout: page
 title: "PAPER"
-description: "I Love TTS"
+description: "TTS paper"
+header-img: "img/post-bg-about.jpg"
 ---
 
-<!-- header-img: "img/post-bg-about.jpg" -->
 <!-- Language Selector -->
 <!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
