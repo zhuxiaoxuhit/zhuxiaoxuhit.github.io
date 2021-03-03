@@ -75,6 +75,7 @@ Output:8*2("SAME") or (8-4+1)*2("VALID")
 <center>$$\boldsymbol{L}{{out} = \frac{{\boldsymbol{L}{{in}+2xpading-dilationx(kernelsize-1)-1}{stride} + 1 $$</center>
 ![](/img/cc_cnn4.JPG)
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
+```
 Input:7x5(句子帧数x每帧的维度)         
 Filters(output channel or滤波器数量or输出维度or输出深度):for i in 2,2,3,3,4,4       
 kernel size(卷积核尺寸):1           
@@ -83,6 +84,7 @@ Weights:2x5x1,2x5x1,3x5x1,3x5x1,4x5x1,4x5x1(卷积核尺寸x输入维度x输出�
 Max pooling and the first time concat 0utput:2x1,2x1,2x1     
 After second concat:6x1            
 Output:2x1                
+```
 ![](/img/cc_cnn5.jpg)
 
 
