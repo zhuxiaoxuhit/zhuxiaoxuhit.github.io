@@ -72,7 +72,7 @@ Stride:1
 Weights:4x3x2(卷积核尺寸x输入维度x输出维度)         
 Output:8*2("SAME") or (8-4+1)*2("VALID")             
 ```
-<center>$$\boldsymbol{L}{{out} = \frac{{\boldsymbol{L}{{in}+2xpading-dilationx(kernelsize-1)-1}{stride} + 1 $$</center>
+<center>$$\boldsymbol{L}{out} = \frac{\boldsymbol{L}{in}+2xpading-dilationx(kernelsize-1)-1}{stride} + 1 $$</center>
 ![](/img/cc_cnn4.JPG)
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
 ```
