@@ -51,22 +51,28 @@ AttentionCell运算:
 
 ##  CNN
 #### 2D 
+```
 Input:10x10x3(长x宽x输入维度)     
 Filters(output channel or滤波器数量or输出维度or输出深度):4            
 kernel size(卷积核尺寸):4x4                    
 Stride:1         
 Weights:4x4x3x1(卷积核尺寸x输入维度x输出维度)             
 Output:10x10x4("SAME") or (10-4+1)x(10-4+1)x4("VALID")           
+L_out = \frac{L_in+2xpading-dilationx(kernelsize-1)-1}{stride} + 1
+```
 ![](/img/cc_cnn1.png)         
 ![](/img/cc_cnn2.png)         
 ![](/img/cc_cnn3.png)         
+
 #### 1D
+```
 Input:8x3(句子帧数x每帧的维度)        
 Filters(output channel or滤波器数量or输出维度or输出深度):2        
 kernel size(卷积核尺寸):4          
 Stride:1         
 Weights:4x3x2(卷积核尺寸x输入维度x输出维度)         
 Output:8*2("SAME") or (8-4+1)*2("VALID")             
+```
 ![](/img/cc_cnn4.JPG)
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
 Input:7x5(句子帧数x每帧的维度)         
