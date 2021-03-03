@@ -94,8 +94,8 @@ Output:2x1
 torch.nn.ConvTranspose1d(in_channels, out_channels, kernel_size, stride, padding, output_padding, groups, dilation, padding_mode)
 input:  [N, in_ch,  L_in]
 output: [N, out_ch, L_out]
-L_out = (L_in - 1) * stride - 2 * padding + dilation * (kernel_size - 1) + output_padding + 1
 ```
+<center>$$\boldsymbol{L}{out} = (\boldsymbol{L}{in} - 1) * stride - 2 * padding + dilation * (kernel_size - 1) + output_padding + 1 $$</center>
 当我们想要Lout为Lin的M倍时，只需设置stride=M，然后解出其他参数即可。
 
 #### 学习率曲线的warmup设置
