@@ -50,7 +50,7 @@ AttentionCell运算:
 <center>$$(\boldsymbol{c}{t'},\sum{\boldsymbol{c}{0...t'}}) = AttentionCell(\boldsymbol{S}t,\boldsymbol{H}{0...T}) $$</center>
 
 ##  CNN
-#### 2D 
+#### Conv2d 
 ```
 Input:10x10x3(长x宽x输入维度)     
 Filters(output channel or滤波器数量or输出维度or输出深度):4            
@@ -59,11 +59,24 @@ Stride:1
 Weights:4x4x3x1(卷积核尺寸x输入维度x输出维度)             
 Output:10x10x4("SAME") or (10-4+1)x(10-4+1)x4("VALID")           
 ```
+<center>$$Input:[N,\boldsymbol{C}{in},\boldsymbol{H}{in},\boldsymbol{W}{in}]$$</center>
+<center>$$Output:[N,\boldsymbol{C}{out},\boldsymbol{H}{out},\boldsymbol{W}{out}]$$</center>
+<center>$$\boldsymbol{H}{out} = [\frac{\boldsymbol{H}{in}+2*pading[0]-dilation[0]*(kernelsize[0]-1)-1}{stride[0]} + 1] $$</center>
+<center>$$\boldsymbol{W}{out} = [\frac{\boldsymbol{W}{in}+2*pading[1]-dilation[1]*(kernelsize[1]-1)-1}{stride[1]} + 1] $$</center>
+
 ![](/img/cc_cnn1.png)         
 ![](/img/cc_cnn2.png)         
 ![](/img/cc_cnn3.png)         
 
-#### 1D
+#### Pool2d 
+AvgPool2d or MaxPool2d
+
+<center>$$Input:[N,C,\boldsymbol{H}{in},\boldsymbol{W}{in}]$$</center>
+<center>$$Output:[N,C,\boldsymbol{H}{out},\boldsymbol{W}{out}]$$</center>
+<center>$$\boldsymbol{H}{out} = [\frac{\boldsymbol{H}{in}+2*pading[0]-kernelsize[0]}{stride[0]} + 1]$$</center>
+<center>$$\boldsymbol{W}{out} = [\frac{\boldsymbol{W}{in}+2*pading[1]-kernelsize[1]}{stride[1]} + 1]$$</center>
+
+#### Conv1d
 ```
 Input:8x3(句子帧数x每帧的维度)        
 Filters(output channel or滤波器数量or输出维度or输出深度):2        
@@ -72,8 +85,18 @@ Stride:1
 Weights:4x3x2(卷积核尺寸x输入维度x输出维度)         
 Output:8*2("SAME") or (8-4+1)*2("VALID")             
 ```
-<center>$$\boldsymbol{L}{out} = \frac{\boldsymbol{L}{in}+2*pading-dilation*(kernelsize-1)-1}{stride} + 1 $$</center>
+<center>$$Input:[N,\boldsymbol{C}{in},\boldsymbol{L}{in}]$$</center>
+<center>$$Output:[N,\boldsymbol{C}{out},\boldsymbol{L}{out}]$$</center>
+<center>$$\boldsymbol{L}{out} = [\frac{\boldsymbol{L}{in}+2*pading-dilation*(kernelsize-1)-1}{stride} + 1] $$</center>
 ![](/img/cc_cnn4.JPG)
+
+#### Pool1d
+AvgPool1d or MaxPool1d
+
+<center>$$Input:[N,C,\boldsymbol{L}{in}]$$</center>
+<center>$$Output:[N,C,\boldsymbol{L}{out}]$$</center>
+<center>$$\boldsymbol{L}{out} = [\frac{\boldsymbol{H}{in}+2*pading-kernelsize}{stride} + 1]$$</center>
+
 #### 语音技术中常用的1D技法:concat不同卷积核大小的输出结果
 ```
 Input:7x5(句子帧数x每帧的维度)         
@@ -87,16 +110,23 @@ Output:2x1
 ```
 ![](/img/cc_cnn5.jpg)
 
+#### Transpose Conv2D
 
-#### Transpose Conv1D在语音中的应用
+<center>$$Input:[N,\boldsymbol{C}{in},\boldsymbol{H}{in},\boldsymbol{W}{in}]$$</center>
+<center>$$Output:[N,\boldsymbol{C}{out},\boldsymbol{H}{out},\boldsymbol{W}{out}]$$</center>
+<center>$$\boldsymbol{H}{out} = (\boldsymbol{H}{in} - 1) * stride[0] - 2 * padding[0] + dilation[0] * (kernel_size[0] - 1) + output_padding[0] + 1 $$</center>
+<center>$$\boldsymbol{W}{out} = (\boldsymbol{W}{in} - 1) * stride[1] - 2 * padding[1] + dilation[1] * (kernel_size[1] - 1) + output_padding[1] + 1 $$</center>
+
+#### Transpose Conv1D
 语音合成中使用转置卷积，我们需要控制samples的长度.
 ```
 torch.nn.ConvTranspose1d(in_channels, out_channels, kernel_size, stride, padding, output_padding, groups, dilation, padding_mode)
-input:  [N, in_ch,  L_in]
-output: [N, out_ch, L_out]
 ```
+<center>$$Input:[N,\boldsymbol{C}{in},\boldsymbol{L}{in}]$$</center>
+<center>$$Output:[N,\boldsymbol{C}{out},\boldsymbol{L}{out}]$$</center>
 <center>$$\boldsymbol{L}{out} = (\boldsymbol{L}{in} - 1) * stride - 2 * padding + dilation * (kernel_size - 1) + output_padding + 1 $$</center>
 当我们想要Lout为Lin的M倍时，只需设置stride=M，然后解出其他参数即可。
+
 
 #### 学习率曲线的warmup设置
 ```python
