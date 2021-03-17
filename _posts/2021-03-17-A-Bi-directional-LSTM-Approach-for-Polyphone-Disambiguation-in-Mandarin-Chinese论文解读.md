@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [多音字消歧] A Bi-directional LSTM Approach for Polyphone Disambiguation in Mandarin Chinese 论文解读 
+title:      A Bi-directional LSTM Approach for Polyphone Disambiguation in Mandarin Chinese论文解读 
 subtitle:   A Bi-directional LSTM Approach for Polyphone Disambiguation in Mandarin Chinese
 date:       2021-03-17
 author:     朱晓旭
