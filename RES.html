@@ -88,7 +88,7 @@ header-img: "img/post-bg-about.jpg"
     </tr>
 		<tr>
       <td colspan="4" >
-					1) Bunched 和 Mulitband LPCNet算法优化与工程推理。Bundched单线程推理速度为4.2倍实时, Mulltiband推理速度为5.3倍实时。目前已上线送餐机器人。</br>
+					1) Bunched 和 Mulitband LPCNet算法实现、优化与工程推理。Bundched单线程推理速度为4.2倍实时, Mulltiband推理速度为5.3倍实时。目前已上线送餐机器人。</br>
 					2) pqmf算法C代码推理实现与优化; GRUB预计算加速; Protobuf模型序列化。</br>
 			</td>
     </tr>
@@ -169,10 +169,36 @@ header-img: "img/post-bg-about.jpg"
  
 <hr style="height:1px;border:none;border-top:1px solid #555555;" />
    
-<h2>Neutral vocoder</h2>
+<h3>Multiband LPCNet</h3>
+<h3>Bunched LPCNet</h3>
+
+<table border="2" bordercolor="black" width="300" cellspacing="0" cellpadding="5" style="margin:auto">    			
+<tr>     
+<td>utter_ID</td>    <td>bunched_4.2times</td>    <td>original</td>    </tr>
+<tr><td>000001</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000001.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000001.wav"></audio></td>    
+<tr><td>000002</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000002.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000002.wav"></audio></td>    
+<tr><td>000003</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000003.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000003.wav"></audio></td>    
+<tr><td>000004</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000004.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000004.wav"></audio></td>    
+<tr><td>000005</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000005.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000005.wav"></audio></td>    
+<tr><td>000006</td>    
+<td><audio style="width:600px"controls><source src="bunched_4.2times/F00001000006.wav"></audio></td>    
+<td><audio style="width:600px"controls><source src="original/F00001000006.wav"></audio></td>    
+</tr></table>
 
 
-<h3>3.3.1 Improvements on basic MelGAN</h3>
+
+<h3>Multiband HIFIGAN</h3>
+<h3>Personality(25 utters)</h3>
 <table>
 <tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
 <tr>
