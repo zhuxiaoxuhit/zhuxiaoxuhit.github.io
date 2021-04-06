@@ -1,95 +1,809 @@
----
-layout: page
-title: "RES"
-description: "paper,books and others"
-header-img: "img/post-bg-about.jpg"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo page</title>
+</head>
+<body>
 
-<!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-
-    <!--copied from markdown -->
-		<!-- <blockquote><p>行动力是制胜法宝</p></blockquote> -->
-
-		<p><a href="http://htmlpreview.github.io/?https://github.com/zhuxiaoxuhit/zhuxiaoxuhit.github.io/blob/master/src/paper.html">TTS paper</a></td>
-
-
-    
-<!--     <h5>Talks</h5>
-
-    <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-        <li><a href="http://huangxuan.me/">Hux</a></li> 
-        <li><a href="https://analytics.google.com/analytics">Google Analytics</a></li>
-	</ul>-->
+<h2 align="center"> Achievement Display</h2>
+<div><b>Abstract:</b> 
+ 这是简历上所有项目经历的demo展示页(zhuxiaoxuhit@gmail.com) 
 </div>
 
-<!-- English Version -->
-<!-- <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-    Yet another Life-long Student.</p></blockquote>
+</p>
 
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
 
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+  .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+  </style>
+  <table class="tg">
+    <tr>
+      <th class="tg-c3ow">Index</th>
+      <th class="tg-c3ow">Model</th>
+      <th class="tg-c3ow">Loss</th>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">F0</td>
+      <td class="tg-0pky">basic MelGAN</td>
+      <td class="tg-0pky">feature matching loss + gan loss</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">F1</td>
+      <td class="tg-0pky">&nbsp;&nbsp;&nbsp;+ <span style="font-weight:normal">Pretrain G</span></td>
+      <td class="tg-0pky">feature matching loss + gan loss</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">F2</td>
+      <td class="tg-0pky">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ multi-resolution STFT</td>
+      <td class="tg-0pky">multi-resolution stft loss + gan loss</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">F3</td>
+      <td class="tg-0pky">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight:normal">+ Deepen ResStack</span></td>
+      <td class="tg-0pky">multi-resolution stft loss + gan loss</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">M1</td>
+      <td class="tg-0pky">MB-MelGAN</td>
+      <td class="tg-0pky">full-band loss + gan loss</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">M2</td>
+      <td class="tg-0pky">MB-MelGAN</td>
+      <td class="tg-0pky">sub-band + full-band loss + gan loss</td>
+    </tr>
+  </table>
+ 
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+   
+<h2>Neutral vocoder</h2>
+
+
+<h3>3.3.1 Improvements on basic MelGAN</h3>
+<blockquote>
+<table>
+<tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/000324_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>2. 秋保的脚部等处也负有轻伤。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/000679_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>3. 这已不是蔡某首次伸出肮脏之手。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/003124_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>4. 目前，四位市民已为自己的爱犬报名。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/005395_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>5. 随着关于“收入增长”的陆续吹风，百姓的胃口被越吊越高。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/006776_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>6. 于是，他们向乡政府提出，想义务赡养乡里的一些孤寡老人。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/007009_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>7. 枪案发生后警方封锁了曼哈顿多条街道。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/008637_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>8. 我们从黄海之滨，向青藏高原，向世界屋脊，发去我们最好的祝愿。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/008998_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>9. 因华国锋肖鸡，墓地设计根据其属相设计。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/009999_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>10. 在狱中，张明宝悔恨交加，写了一份忏悔书。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F1</td><td align=center width=200>F2</td><td align=center width=200>F3</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/f0/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f1/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f2/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/f3/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/010000_target.wav"></audio></td>
+</tr>
+</table>
+</blockquote>
+<div align="center">
+  <img src="figures/table3.png" width="500px">
+</div>
+
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+
+<h3>3.3.2 Training strategy for MB-MelGAN</h3>
+<blockquote>
+<table>
+<tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/000324.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/000324_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>2. 秋保的脚部等处也负有轻伤。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/000679.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/000679_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>3. 这已不是蔡某首次伸出肮脏之手。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/003124.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/003124_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>4. 目前，四位市民已为自己的爱犬报名。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/005395.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/005395_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>5. 随着关于“收入增长”的陆续吹风，百姓的胃口被越吊越高。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/006776.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/006776_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>6. 于是，他们向乡政府提出，想义务赡养乡里的一些孤寡老人。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/007009.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/007009_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>7. 枪案发生后警方封锁了曼哈顿多条街道。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/008637.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/008637_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>8. 我们从黄海之滨，向青藏高原，向世界屋脊，发去我们最好的祝愿。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/008998.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/008998_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>9. 因华国锋肖鸡，墓地设计根据其属相设计。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/009999.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/009999_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>10. 在狱中，张明宝悔恨交加，写了一份忏悔书。</span></td></tr>
+<tr>
+<td align=center width=200>M1</td><td align=center width=200>M2</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/m1/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/m2/010000.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/4/010000_target.wav"></audio></td>
+</tr>
+</table>
+</blockquote>
+<div style=" margin-left:250px;">
+  <img src="figures/table4.png" width="500px">
+</div>
+
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+
+<h3>Text-to-speech</h3>
+<blockquote>
+<table>
+<tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/000324.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/000324.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/000324.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>2. 秋保的脚部等处也负有轻伤。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/000679.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/000679.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/000679.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>.3 随着关于“收入增长”的陆续吹风，百姓的胃口被越吊越高。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/006776.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/006776.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/006776.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>4. 于是，他们向乡政府提出，想义务赡养乡里的一些孤寡老人。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/007009.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/007009.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/007009.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>5. 枪案发生后警方封锁了曼哈顿多条街道。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/008637.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/008637.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/008637.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>6. 我们从黄海之滨，向青藏高原，向世界屋脊，发去我们最好的祝愿。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/008998.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/008998.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/008998.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>7. 因华国锋肖鸡，墓地设计根据其属相设计。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/009999.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/009999.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/009999.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>8. 在狱中，张明宝悔恨交加，写了一份忏悔书。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/010000.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/010000.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/010000.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>9. 他一度梦想参军，但是因没身份而作罢，整日在村内瞎晃。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/41.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/41.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/41.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>10. 随后的两天时间里，警方出击，解救了小美、丹丹、可可等女子。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/66.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/66.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/66.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>11. 床前明月光，疑是地上霜。 举头望明月，低头思故乡。</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/120.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/120.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/120.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>12. 主人为什么突然说这个数字啊，是不是有什么特殊的含义呢</span></td></tr>
+<tr>
+<td align=center width=200>F0</td><td align=center width=200>F3</td><td align=center width=200>M2</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/tts/0/287.wav"></audio></td>
+<td><audio controls><source src="samples/tts/1/287.wav"></audio></td>
+<td><audio controls><source src="samples/tts/2/287.wav"></audio></td>
+</tr>
+</table>
+</blockquote>
+<div style=" margin-left:250px;">
+  <img src="figures/table6.png" width="500px">
+</div>
+
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+
+<h3>Generalization ability of M2 to unseen speakers (Up: predicted; Down: target )</h3>
+<blockquote>
+<table>
+<tr>
+<td align=center width=200>speaker1 (female)</td><td align=center width=200>speaker2 (female)</td><td align=center width=200>speaker3 (female)</td><td align=center width=200>speaker4 (male)</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/1.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/1_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/3.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/3_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/311026.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/311026_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/2.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/2_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr>
+<td align=center width=200>speaker1 (female)</td><td align=center width=200>speaker2 (female)</td><td align=center width=200>speaker3 (female)</td><td align=center width=200>speaker4 (male)</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/10.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/10_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/30.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/30_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/311021.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/311021_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/20.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/20_target.wav"></audio></td></tr>
+<tr height="15px"></tr>
+<tr>
+<td align=center width=200>speaker1 (female)</td><td align=center width=200>speaker2 (female)</td><td align=center width=200>speaker3 (female)</td><td align=center width=200>speaker4 (male)</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/11.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/11_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/31.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/31_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/311022.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/311022_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/21.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/21_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr>
+<td align=center width=200>speaker1 (female)</td><td align=center width=200>speaker2 (female)</td><td align=center width=200>speaker3 (female)</td><td align=center width=200>speaker4 (male)</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/12.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/12_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/32.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/32_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/311023.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/311023_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/22.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/22_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr>
+<td align=center width=200>speaker1 (female)</td><td align=center width=200>speaker2 (female)</td><td align=center width=200>speaker3 (female)</td><td align=center width=200>speaker4 (male)</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/13.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/13_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/33.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/33_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/311024.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/311024_target.wav"></audio></td>
+<td><audio controls><source src="samples/vocoder/out_domain/predict/23.wav"></audio><audio controls><source src="samples/vocoder/out_domain/target/23_target.wav"></audio></td>
+</tr>
+
+</table>
+</blockquote>
+<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+
+<h3>Additional experiment</h3>
+<h4>Neutral vocoder (M2, hop_length=80 <font color="red">VS</font> M2, hop_length=160)</h4>
+<blockquote>
+    <table>
+    <tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
+    <tr>
+    <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/000324.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/000324.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/000324_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>2. 秋保的脚部等处也负有轻伤。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/000679.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/000679.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/000679_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>3. 这已不是蔡某首次伸出肮脏之手。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/003124.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/003124.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/003124_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>4. 目前，四位市民已为自己的爱犬报名。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/005395.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/005395.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/005395_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>5. 随着关于“收入增长”的陆续吹风，百姓的胃口被越吊越高。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/006776.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/006776.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/006776_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>6. 于是，他们向乡政府提出，想义务赡养乡里的一些孤寡老人。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/007009.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/007009.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/007009_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>7. 枪案发生后警方封锁了曼哈顿多条街道。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/008637.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/008637.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/008637_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>8. 我们从黄海之滨，向青藏高原，向世界屋脊，发去我们最好的祝愿。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/008998.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/008998.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/008998_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>9. 因华国锋肖鸡，墓地设计根据其属相设计。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/009999.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/009999.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/009999_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>10. 在狱中，张明宝悔恨交加，写了一份忏悔书。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2 (hop_length=80)</td><td align=center width=200>M2 (hop_length=160)</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/5ms_multi_band/010000.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/10ms_multi_band/010000.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/4/010000_target.wav"></audio></td>
+    </tr>
     
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+    </table>
+    </blockquote>
 
-    <h5>Talks</h5>
+<h4>Neutral vocoder for 24,000 sample rate (M2, hop_length=120, win_length=240)</h4>
+<blockquote>
+    <table>
+    <tr><td colspan=2><span>1. 建议北京也搞一个哟！</span></td></tr>
+    <tr>
+    <td align=center width=200>M2</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/000324.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/000324_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>2. 秋保的脚部等处也负有轻伤。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/000679.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/000679_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>3. 这已不是蔡某首次伸出肮脏之手。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/003124.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/003124_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>4. 目前，四位市民已为自己的爱犬报名。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/005395.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/005395_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>5. 随着关于“收入增长”的陆续吹风，百姓的胃口被越吊越高。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+    </tr>
+    <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/006776.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/006776_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>6. 于是，他们向乡政府提出，想义务赡养乡里的一些孤寡老人。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+      <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/007009.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/007009_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>7. 枪案发生后警方封锁了曼哈顿多条街道。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+      <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/008637.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/008637_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>8. 我们从黄海之滨，向青藏高原，向世界屋脊，发去我们最好的祝愿。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+      <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/008998.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/008998_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>9. 因华国锋肖鸡，墓地设计根据其属相设计。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+      <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/009999.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/009999_target.wav"></audio></td>
+    </tr>
+    <tr height="15px"></tr>
+    <tr><td colspan=2><span>10. 在狱中，张明宝悔恨交加，写了一份忏悔书。</span></td></tr>
+    <tr>
+      <td align=center width=200>M2</td><td align=center width=200>target</td>
+      <tr>
+    <td><audio controls><source src="samples/vocoder/24k_5ms_subband/010000.wav"></audio></td>
+    <td><audio controls><source src="samples/vocoder/24k_target/010000_target.wav"></audio></td>
+    </tr>
+    
+    </table>
+    </blockquote>
 
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
-</div> -->
+<h4>Multi-speaker-vocoder (MB-MelGAN)</h4>
+<blockquote>
+<table>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>1.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/bc19_bc19_ce_luozhenyu_100104_000003.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/bc19_bc19_ce_luozhenyu_100104_000003_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>2.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/casia_1831.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/casia_1831_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>3.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo000_000254.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo000_000254_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>4.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo008_008276.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo008_008276_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>5.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo024_024460.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo024_024460_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>6.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo047_047485.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo047_047485_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>7.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo058_058100.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo058_058100_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>8.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo061_061196.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo061_061196_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>9.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo071_071149.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo071_071149_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>10.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo077_077190.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo077_077190_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>11.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/walkman_clean_news_wav_001158.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/walkman_clean_news_wav_001158_target.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+<tr><td colspan=2><span>12.</span></td></tr>
+<tr>
+<td align=center width=200>predict</td><td align=center width=200>target</td>
+</tr>
+<tr>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/1/robo035_035223.wav"></audio></td>
+<td><audio controls><source src="samples/mutli-speaker-vocoder/2/robo035_035223_target.wav"></audio></td>
+</tr>
+</table>
+</blockquote>
 
-<!-- Handle Language Change -->
-<!--
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
--->
+</body>
+</html>
