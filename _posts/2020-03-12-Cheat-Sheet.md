@@ -1,6 +1,5 @@
 ---
-layout:     post
-title:      Cheat Sheet
+layout:     post title:      Cheat Sheet
 subtitle:   Mathematical formula
 date:       2020-03-12
 author:     朱晓旭
@@ -140,6 +139,16 @@ def _learning_rate_decay(init_lr, global_step):
 warmup的设置可以看出，学习率曲线是在global_step在warmup之前单调递增，在warmup时到达峰值，随后单调递减。     
 这么做的好处是，如果训练开始模型还没有见过所有的数据的时候就以高学习率进行学习，可能会陷入鞍点。      
 warmup的设置，个人的经验是两到三个batch。
+
+
+#### Negative Log-Likelihood (NLL)
+```terminal
+L(y)=−log(y)
+```
+实践中,softmax函数通常和负对数似然(negative log-likelihood,NLL)一起使用,<b>本质是对正确的标签的预测概率取-log()运算</b>,因此正确标签预测概率越大，其数值越小,我们的NLL损失函数就是要最小化这个值(也就是最大化正确类别标签的概率预测值)
+![](/img/nll.JPG)
+![](/img/neg_log_demo.png)
+
 
 #### python脚本的执行过程
 过程概述：    
