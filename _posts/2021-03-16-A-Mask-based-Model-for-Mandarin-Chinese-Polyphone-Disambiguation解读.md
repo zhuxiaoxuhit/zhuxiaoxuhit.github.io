@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      A Mask-based Model for Mandarin Chinese Polyphone Disambiguation 论文解读 
-subtitle:   多音字消歧论文 A Mask-based Model for Mandarin Chinese Polyphone Disambiguation
+title:      [多音字消歧]A Mask-based Model for Mandarin Chinese Polyphone Disambiguation 论文解读 
+subtitle:   A Mask-based Model for Mandarin Chinese Polyphone Disambiguation
 date:       2021-03-16
 author:     朱晓旭
 header-img: img/bg.jpg
