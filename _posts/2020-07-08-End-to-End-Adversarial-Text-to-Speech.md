@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      End-to-End Adversarial Text-to-Speech
+title:      【端到端TTS】End-to-End Adversarial Text-to-Speech
 subtitle:   EATS
 date:       2020-07-08
 author:     朱晓旭

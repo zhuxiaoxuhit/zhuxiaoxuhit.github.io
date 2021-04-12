@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      GAN AND GAN ALGORITHM WITH AUDIO
+title:      【声码器】GAN AND GAN ALGORITHM WITH AUDIO
 subtitle:   GAN-AND-GAN-ALGORITHM-WITH_AUDIO
 date:       2020-05-15
 author:     朱晓旭
