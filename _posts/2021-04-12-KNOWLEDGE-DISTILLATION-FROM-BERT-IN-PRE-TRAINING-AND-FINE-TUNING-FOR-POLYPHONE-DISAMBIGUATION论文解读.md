@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [多音字消歧] Knowledge Distillation from Bert in Pre-Training and Fine-Tuning for Polyphone Disambiguation 论文解读 
+title:      【多音字消歧】Knowledge Distillation from Bert in Pre-Training and Fine-Tuning for Polyphone Disambiguation 论文解读 
 subtitle:   A Mask-based Model for Mandarin Chinese Polyphone Disambiguation
 date:       2021-04-12
 author:     朱晓旭
