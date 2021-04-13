@@ -1,5 +1,6 @@
 ---
-layout:     post title:      Cheat Sheet
+layout:     post 
+title:      Cheat Sheet 
 subtitle:   Mathematical formula
 date:       2020-03-12
 author:     朱晓旭
