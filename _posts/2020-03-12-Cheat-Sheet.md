@@ -140,6 +140,13 @@ warmup的设置可以看出，学习率曲线是在global_step在warmup之前单
 这么做的好处是，如果训练开始模型还没有见过所有的数据的时候就以高学习率进行学习，可能会陷入鞍点。      
 warmup的设置，个人的经验是两到三个batch。
 
+#### self attention(李宏毅)
+![](/img/self_attention_1.JPG)
+![](/img/self_attention_2.JPG)
+![](/img/self_attention_3.JPG)
+![](/img/self_attention_4.JPG)
+![](/img/self_attention_5.JPG)
+![](/img/self_attention_6.JPG)
 
 #### Negative Log-Likelihood (NLL)
 ```terminal
