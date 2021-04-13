@@ -147,6 +147,7 @@ warmup的设置，个人的经验是两到三个batch。
 ![](/img/self_attention_4.JPG)
 ![](/img/self_attention_5.JPG)
 ![](/img/self_attention_6.JPG)
+![](/img/self_attention_7.JPG)
 
 #### Negative Log-Likelihood (NLL)
 ```terminal
