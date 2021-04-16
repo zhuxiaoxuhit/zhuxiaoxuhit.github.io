@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      【语音合成前端】Flavored Tacotron: Conditional Learning for Prosodic-linguistic Features 论文解读 
-subtitle:   Flavored Tacotron: Conditional Learning for Prosodic-linguistic Features
+title:      【语音合成前端】Flavored Tacotron Conditional Learning for Prosodic-linguistic Features 论文解读 
+subtitle:   Flavored Tacotron Conditional Learning for Prosodic-linguistic Features
 date:       2021-04-16
 author:     朱晓旭
 header-img: img/bg.jpg
