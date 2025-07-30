@@ -12,26 +12,40 @@ description: "Speech AI researcher focusing on large speech models and speech ge
     <script>
         // 修复导航锚点定位
         document.addEventListener('DOMContentLoaded', function() {
-            // 获取所有导航链接
-            const navLinks = document.querySelectorAll('a[href^="#"]');
+            // 获取所有包含锚点的导航链接
+            const navLinks = document.querySelectorAll('a[href*="#"]');
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    const href = this.getAttribute('href');
                     
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        // 计算导航栏高度 + 额外偏移量
-                        const navbarHeight = 80; // 考虑导航栏高度和额外间距
-                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                    // 检查是否是锚点链接
+                    if (href.includes('#')) {
+                        const hashIndex = href.indexOf('#');
+                        const targetId = href.substring(hashIndex + 1);
                         
-                        // 平滑滚动到目标位置
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+                        // 只处理当前页面的锚点
+                        if (targetId && document.getElementById(targetId)) {
+                            e.preventDefault();
+                            
+                            const targetElement = document.getElementById(targetId);
+                            
+                            // 动态计算导航栏高度
+                            const navbar = document.querySelector('.navbar-fixed-top');
+                            let navbarHeight = 60; // 默认值
+                            
+                            if (navbar) {
+                                navbarHeight = navbar.offsetHeight + 20; // 额外20px间距
+                            }
+                            
+                            const targetPosition = targetElement.offsetTop - navbarHeight;
+                            
+                            // 平滑滚动到目标位置
+                            window.scrollTo({
+                                top: Math.max(0, targetPosition), // 确保不会滚动到负位置
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
