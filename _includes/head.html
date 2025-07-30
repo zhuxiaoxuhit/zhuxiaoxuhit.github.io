@@ -64,11 +64,30 @@
             float: none !important;
             display: inline-block;
         }
-        .navbar-right {
-            margin-right: 0 !important;
-        }
+            .navbar-right {
+        margin-right: 0 !important;
     }
-    </style>
+}
+
+/* Keep navigation bar always visible */
+@media only screen and (min-width: 1170px) {
+    .navbar-custom.is-fixed {
+        top: 0 !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+    .navbar-custom.is-visible {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+}
+</style>
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
