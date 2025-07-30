@@ -1,279 +1,92 @@
 ---
-layout: page
-title: "ME"
-description: "Love TTS, Love ML"
-header-img: "img/post-bg-about.jpg"
+layout: default
+title: "About"
+description: "About Zhu Xiaoxu - Speech AI Researcher"
 ---
 
-<!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
+<!-- About Page Content -->
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading">
+                <h1 style="margin-bottom: 30px;"><i class="fa fa-user"></i> About Me</h1>
+            </div>
+            
+            <div class="row" style="margin-bottom: 30px;">
+                <div class="col-md-3">
+                    <img src="/img/about_zhuxiaoxu.jpg" alt="Zhu Xiaoxu" class="img-responsive" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="col-md-9">
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I am Zhu Xiaoxu (朱晓旭), a Speech AI researcher focusing on <strong>large speech models</strong> and <strong>speech generation</strong>. 
+                        I have been working on speech algorithm research and development at <strong>SenseTime</strong> since 2021.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I received my Bachelor's degree in Materials Forming and Control Engineering from <strong>Harbin Institute of Technology</strong> in 2016, 
+                        and my Master's degree in Informatics and Computing Technology from <strong>Peter the Great St. Petersburg Polytechnic University</strong> in 2019. 
+                        I am currently pursuing my Master's degree in Information Management at <strong>Tsinghua University</strong>, expected to graduate in 2025.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I have also worked or interned at <strong>Siemens</strong>, <strong>Cheetah Mobile (OrionStar)</strong>, and <strong>Shanghai AI Laboratory</strong>.
+                    </p>
+                    
+                    <!-- Contact Links -->
+                    <div style="margin-top: 20px;">
+                        <a href="mailto:zhuxiaoxuhit@gmail.com" style="margin-right: 15px; color: #0085a1;">
+                            <i class="fa fa-envelope" style="font-size: 18px;"></i> Email
+                        </a>
+                        <a href="https://github.com/zhuxiaoxuhit" target="_blank" style="margin-right: 15px; color: #0085a1;">
+                            <i class="fa fa-github" style="font-size: 18px;"></i> GitHub
+                        </a>
+                        <a href="https://scholar.google.com" target="_blank" style="color: #0085a1;">
+                            <i class="fa fa-graduation-cap" style="font-size: 18px;"></i> Google Scholar
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<!-- Chinese Version -->
+            <!-- Professional Experience -->
+            <div style="margin-top: 40px;">
+                <h2 style="color: #333; margin-bottom: 20px;"><i class="fa fa-briefcase"></i> Professional Experience</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong>SenseTime</strong> - Speech Algorithm Researcher (2021.9 - Present)<br>
+                        <span style="color: #666; font-size: 14px;">Working on large speech models and speech generation algorithms</span>
+                    </li>
+                    <li style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong>Shanghai AI Laboratory</strong> - Algorithm Consultant (2022.6 - 2023.6)<br>
+                        <span style="color: #666; font-size: 14px;">Research consultation on speech AI technologies</span>
+                    </li>
+                    <li style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong>Cheetah Mobile (OrionStar)</strong> - Speech Algorithm Researcher (2019.10 - 2021.9)<br>
+                        <span style="color: #666; font-size: 14px;">Developed speech synthesis systems for robotics applications</span>
+                    </li>
+                    <li style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong>Siemens (St. Petersburg)</strong> - Algorithm Engineer & Intern (2018.5 - 2019.9)<br>
+                        <span style="color: #666; font-size: 14px;">Machine learning algorithm development and implementation</span>
+                    </li>
+                </ul>
+            </div>
 
-<div class="zh post-container">
-
-
-<h2 align="center"> resume</h2>
-
-<!--
-<table style="table-layout: fixed;" border="1" width="100%" cellspacing="0" cellpadding="2">
-    <tr>
-				<td colspan="4" align="center"><b style="color:blue" >基本信息</b></td>
-    </tr>
-    <tr>
-      <td>学历</td>
-      <td>硕士研究生</td>
-      <td>政治面貌</td>
-      <td>中共党员</td>
-    </tr>
-    <tr>
-      <td>籍贯</td>
-      <td>山东临沂</td>
-      <td>邮箱</td>
-      <td style="word-break:break-all;"><a href="zhuxiaoxuhit@gmail.com">zhuxiaoxuhit@gmail.com</a></td>
-    </tr>
-    <tr>
-      <td>个人博客</td>
-      <td><a href="https://zhuxiaoxuhit.github.io">zhuxiaoxuhit.github.io</a></td>
-      <td>工作职位</td>
-      <td>TTS算法工程师</td>
-    </tr>
-    
-		<tr>
-				<td colspan="4" align="center"><b style="color:blue">教育背景</b></td>
-    </tr>
-    <tr>
-      <td>2017.09 - 2019.09</td>
-			<td><b>圣彼得堡国立技术大学</b></td>
-      <td>信息与计算技术</td>
-      <td>硕士研究生</td>
-    </tr>
-    <tr>
-      <td>2012.09 - 2016.07</td>
-			<td><b>哈尔滨工业大学</b></td>
-      <td>材料成型及控制工程</td>
-      <td>本科</td>
-    </tr>
-   
-		<tr>
-				<td colspan="4" align="center"><b style="color:blue">工作经历</b></td>
-    </tr>
-    <tr>
-      <td >2019.10-现在</td>
-      <td colspan="2" >北京市商汤科技开发有限公司</td>
-      <td >语音算法工程师</td>
-    </tr>
-
-		<tr>
-				<td colspan="4" align="center"><b style="color:blue">项目经验</b></td>
-    </tr>
-		
-		<tr>
-      <td colspan="2" >2020.03-2021.01</td>
-			<td colspan="2" ><b>Multiband LPCNet声码器(主要负责)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >
-					1) Bunched 和 Mulitband LPCNet算法实现、优化与工程推理。Bundched单线程推理速度为4.2倍实时, Mulltiband推理速度为5.3倍实时。目前已上线送餐机器人。</br>
-					2) pqmf算法C代码推理实现与优化; GRUB预计算加速; Protobuf模型序列化。</br>
-			</td>
-    </tr>
-		
-		<tr>
-      <td colspan="2" >2021.02-现在</td>
-			<td colspan="2" ><b>HIFI-GAN声码器(主要负责)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >Multiband HIFIGAN算法实现以及工程推理(ORT)。单线程推理速度为9.6倍实时(initial up256)。目前正在走测试流程。</td>
-    </tr>
-		
-		<tr>
-      <td colspan="2" >2020.03-2020.05</td>
-			<td colspan="2" ><b>ONNXRUNTIME cpu c++ 推理(主要负责)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >Tacotron2和HIFI-GAN的工程推理与接入线上模块。Tacotron2+Bunched LPCNet整体多线程(48核心)推理速度为9倍实时。Tacotron2+Multiband LPCNet多线程下长文本合成速度约为25倍实时，短文本实时率约为13倍实时。</td>
-    </tr>
-	
-		<tr>
-      <td colspan="2" >2021.03.01-现在</td>
-			<td colspan="2" ><b>多音字消歧预研(主要负责)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >贝壳科技方案的算法实现(word vector+LSTM+Conv+mask vector)。目前前端多音字预测准确率为91%。</td>
-    </tr>
-	
-		<tr>
-      <td colspan="2" >2020.01-2020.12</td>
-			<td colspan="2" ><b>个性化合成(参与)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >Tacotron+LPCNet多讲话人迭代方案。主要工作为Tacotron2多讲话人基础模型训练以及GTA数据的声码器的增量训练。已上线微信小程序。</td>
-    </tr>
-	
-		<tr>
-      <td colspan="2" >2019.10-2020.01</td>
-			<td colspan="2" ><b>一句话复刻(主要负责)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4" >声纹预训练模型+Tacotron声学模型+WORLD声码器方案，效果不满足上线要求。</td>
-    </tr>
-	
-		<tr>
-      <td colspan="2" >2019.02-2019.07</td>
-			<td colspan="2" ><b>基于深度学习的语音合成系统开发(毕设论文)</b></td>
-    </tr>
-		<tr>
-      <td colspan="4">基于tacotron开发了seq2seq-CWRNN-attention模型，一个端到端的语音合成系统，实现了从字符级别到梅尔波谱级别的映射：特征提取环节使用了CNN,ResNet和MultiLSTM;编码器中使用CWRNN来减少训练参数的数量; 解码器使用LSTM提高了映射精度。工作过程中在编码器解码器部分进行了不同RNN变种的尝试并且进行针对合成自然度的MOS测试，在自然度方面表现很出色。</td>
-    </tr>
-		<tr>
-				<td colspan="4">所有项目的demo展示页<a href="https://zhuxiaoxuhit.github.io/demo/demo_resume_2021.html"><b>demo page</b></a></td>
-    </tr>
-  
-		<tr>
-				<td colspan="4" align="center"><b style="color:blue">语音合成专利</b></td>
-    </tr>
-
-		<tr>
-			<td colspan="2" >2020.10-2021.3</td>
-			<td colspan="2" ><b><a href="https://zhuanli.tianyancha.com/c09359838083f466f00641683f8222ce">残差网络的训练和语音合成方法、装置、设备及介质</a>(主要负责)</b></td>
-    </tr>
-
-
-		<tr>
-      <td colspan="4" >提出一种使用Mel谱作为输入的残差网络，采用GMM方案采样，计算过程使用浮点数，World声码器的预测结果作为condition，对网络结构进行精简。</td>
-    </tr>
-
-
-		<tr>
-				<td colspan="4" align="center" ><b style="color:blue">个人技能</b></td>
-    </tr>
-		<tr>
-				<td colspan="4" >
-						1) 掌握一套成熟的端到端参数合成方案(整体TTS流程推理速度超过10倍实时):数据标注-前端(分词,词性,韵律,多音字)-声学模型(Tacotron2)-神经网络声码器(Multiband LPCNet,HIFIGAN),一种个性化合成实现方案;<br/>
-						2) 熟悉声音转换方案，语音去噪方案以及常用的语音处理库(librosa,sox,scipy等);<br/>
-						3) 理解常用的数据结构，算法设计以及常用机器学习算法;<br/>
-						4) 熟悉Linux系统下项目开发;<br/>
-						5) 熟悉Python，matlab以及C++编程;<br/>
-						6) 掌握扎实的俄语、英语基本功，能够很好地阅读俄语、英语资料，撰写学术论文。<br/>
-				</td>
-    </tr>
-
-  </table>
--->
-
-
-
-</div>
-<!-- English Version -->
-<!-- <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-    Yet another Life-long Student.</p></blockquote>
-
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
-
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
-    
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
-
-    <h5>Talks</h5>
-
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
-</div> -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
-
-
-<!-- Gitalk 评论 start  -->
-{% if site.gitalk.enable %}
-<!-- Gitalk link  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
-    clientID: '{{site.gitalk.clientID}}',
-    clientSecret: '{{site.gitalk.clientSecret}}',
-    repo: '{{site.gitalk.repo}}',
-    owner: '{{site.gitalk.owner}}',
-    admin: ['{{site.gitalk.admin}}'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
-    });
-    gitalk.render('gitalk-container');
-</script>
-{% endif %}
-<!-- Gitalk end -->
-
- <!-- disqus 评论框 start  -->
-{% if site.disqus.enable %}
-
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
+            <!-- Education -->
+            <div style="margin-top: 40px;">
+                <h2 style="color: #333; margin-bottom: 20px;"><i class="fa fa-graduation-cap"></i> Education</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c;">
+                        <strong>Tsinghua University</strong> - M.S. in Information Management (2023 - 2025, expected)<br>
+                        <span style="color: #666; font-size: 14px;">Current graduate studies</span>
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c;">
+                        <strong>Peter the Great St. Petersburg Polytechnic University</strong> - M.S. in Informatics and Computing Technology (2017 - 2019)<br>
+                        <span style="color: #666; font-size: 14px;">Focus on machine learning and algorithm development</span>
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c;">
+                        <strong>Harbin Institute of Technology</strong> - B.S. in Materials Forming and Control Engineering (2012 - 2016)<br>
+                        <span style="color: #666; font-size: 14px;">Undergraduate degree with engineering foundation</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus.username}}";
-    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
 

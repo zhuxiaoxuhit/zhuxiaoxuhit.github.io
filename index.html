@@ -1,42 +1,68 @@
 ---
-layout: page
-description: "Never put off what you can do today until tomorrow."
+layout: default
+title: "Home"
+description: "Speech AI researcher focusing on large speech models and speech generation"
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
+<!-- About Me Section -->
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading">
+                <h1 style="margin-bottom: 30px;"><i class="fa fa-home"></i> About Me</h1>
+            </div>
+            
+            <div class="row" style="margin-bottom: 30px;">
+                <div class="col-md-3">
+                    <img src="/img/about_zhuxiaoxu.jpg" alt="Hang Zhang" class="img-responsive" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="col-md-9">
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I am Hang Zhang (朱晓旭), a Speech AI researcher focusing on <strong>large speech models</strong> and <strong>speech generation</strong>. 
+                        I have been working on speech algorithm research and development at <strong>SenseTime</strong> since 2021.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I received my Bachelor's degree in Materials Forming and Control Engineering from <strong>Harbin Institute of Technology</strong> in 2016, 
+                        and my Master's degree in Informatics and Computing Technology from <strong>Peter the Great St. Petersburg Polytechnic University</strong> in 2019. 
+                        I am currently pursuing my Master's degree in Information Management at <strong>Tsinghua University</strong>, expected to graduate in 2025.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        I have also worked or interned at <strong>Siemens</strong>, <strong>Cheetah Mobile (OrionStar)</strong>, and <strong>Shanghai AI Laboratory</strong>.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div style="margin-top: 20px;">
+                        <a href="mailto:zhuxiaoxuhit@gmail.com" style="margin-right: 15px; color: #0085a1;">
+                            <i class="fa fa-envelope" style="font-size: 18px;"></i>
+                        </a>
+                        <a href="https://github.com/zhuxiaoxuhit" target="_blank" style="margin-right: 15px; color: #0085a1;">
+                            <i class="fa fa-github" style="font-size: 18px;"></i>
+                        </a>
+                        <a href="https://scholar.google.com" target="_blank" style="margin-right: 15px; color: #0085a1;">
+                            <i class="fa fa-graduation-cap" style="font-size: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News Section -->
+            <div style="margin-top: 40px;">
+                <h3 style="color: #333; margin-bottom: 20px;"><i class="fa fa-newspaper-o"></i> News</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px; padding: 10px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong style="color: #d9534f;">[Feb, 2025]</strong> We are building E2E VLM foundation models for the next generation of autonomous driving. <a href="#" style="color: #0085a1;">Jobs are opening</a> at all levels.
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong style="color: #d9534f;">[Apr, 2024]</strong> We're hiring research interns on multi-modal long range 3D object detection for 2024.
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong style="color: #d9534f;">[Oct, 2022]</strong> We're hiring research interns on 3D detection for 2023.
+                    </li>
+                    <li style="margin-bottom: 10px; padding: 10px; background: #f8f9fa; border-left: 4px solid #0085a1;">
+                        <strong style="color: #d9534f;">[Sep, 2022]</strong> I have spent a wonderful time at Meta and am starting my new journey at Cruise.
+                    </li>
+                </ul>
+            </div>
         </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+    </div>
 </div>
-<hr>
-{% endfor %}
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}

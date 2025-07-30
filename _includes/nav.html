@@ -17,13 +17,25 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ site.baseurl }}/">Home</a>
+                        <a href="{{ site.baseurl }}/">
+                            <i class="fa fa-home"></i> Home
+                        </a>
                     </li>
-                    {% for page in site.pages %}{% if page.title %}
                     <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                        <a href="{{ site.baseurl }}/publications.html">
+                            <i class="fa fa-book"></i> Publications
+                        </a>
                     </li>
-                    {% endif %}{% endfor %}
+                    <li>
+                        <a href="{{ site.baseurl }}/blog.html">
+                            <i class="fa fa-pencil"></i> Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ site.baseurl }}/toolkit.html">
+                            <i class="fa fa-cogs"></i> Toolkit
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

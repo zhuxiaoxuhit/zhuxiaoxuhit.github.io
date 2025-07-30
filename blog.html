@@ -1,0 +1,71 @@
+---
+layout: default
+title: "Blog"
+description: "Technical blog posts on speech AI and machine learning"
+---
+
+<!-- Blog Header -->
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading">
+                <h1 style="margin-bottom: 30px;"><i class="fa fa-pencil"></i> Blog</h1>
+                <p style="color: #666; font-size: 18px;">Technical blog posts on speech AI, machine learning, and deep learning</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Posts -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% for post in paginator.posts %}
+            <div class="post-preview" style="margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                <a href="{{ post.url | prepend: site.baseurl }}" style="text-decoration: none;">
+                    <h2 class="post-title" style="color: #333; margin-bottom: 10px;">
+                        {{ post.title }}
+                    </h2>
+                    {% if post.subtitle %}
+                    <h3 class="post-subtitle" style="color: #666; font-weight: 300; margin-bottom: 15px;">
+                        {{ post.subtitle }}
+                    </h3>
+                    {% endif %}
+                    <div class="post-content-preview" style="color: #666; line-height: 1.6;">
+                        {{ post.content | strip_html | truncate:200 }}
+                    </div>
+                </a>
+                <p class="post-meta" style="color: #999; margin-top: 15px; font-size: 14px;">
+                    <i class="fa fa-calendar"></i> Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+                    {% if post.tags %}
+                    <br><i class="fa fa-tags"></i> 
+                    {% for tag in post.tags %}
+                        <span style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 12px; margin-right: 5px;">{{ tag }}</span>
+                    {% endfor %}
+                    {% endif %}
+                </p>
+            </div>
+            {% endfor %}
+
+            <!-- Pager -->
+            {% if paginator.total_pages > 1 %}
+            <ul class="pager" style="text-align: center; margin-top: 40px;">
+                {% if paginator.previous_page %}
+                <li class="previous" style="display: inline-block; margin-right: 20px;">
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="background: #0085a1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                        <i class="fa fa-arrow-left"></i> Newer Posts
+                    </a>
+                </li>
+                {% endif %}
+                {% if paginator.next_page %}
+                <li class="next" style="display: inline-block;">
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="background: #0085a1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                        Older Posts <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div> 
