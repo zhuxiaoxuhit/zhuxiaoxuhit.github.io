@@ -7,17 +7,36 @@ description: "Speech AI researcher focusing on large speech models and speech ge
 <head>
     {% include head.html %}
     <style>
-        /* 修复导航锚点定位，确保内容不被固定导航栏遮挡 */
-        #publications::before,
-        #contributions::before,
-        #contact::before {
-            content: "";
-            display: block;
-            height: 100px; /* 增加偏移量以确保正确定位 */
-            margin-top: -100px; /* 负边距抵消高度 */
-            visibility: hidden;
-        }
+        /* 移除之前的伪元素方法 */
     </style>
+    <script>
+        // 修复导航锚点定位
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有导航链接
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // 计算导航栏高度 + 额外偏移量
+                        const navbarHeight = 80; // 考虑导航栏高度和额外间距
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                        
+                        // 平滑滚动到目标位置
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <!-- About Me Section -->
