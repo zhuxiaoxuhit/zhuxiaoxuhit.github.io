@@ -144,3 +144,36 @@ description: "Speech AI researcher focusing on large speech models and speech ge
         </div>
     </div>
 </div>
+
+<!-- JavaScript for Publications -->
+<script>
+function toggleAbstract(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "none" || element.style.display === "") {
+        element.style.display = "block";
+        // Hide any open bibtex
+        var bibtexId = id.replace('abstract', 'bibtex');
+        var bibtexElement = document.getElementById(bibtexId);
+        if (bibtexElement) {
+            bibtexElement.style.display = "none";
+        }
+    } else {
+        element.style.display = "none";
+    }
+}
+
+function toggleBibtex(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "none" || element.style.display === "") {
+        element.style.display = "block";
+        // Hide any open abstract
+        var abstractId = id.replace('bibtex', 'abstract');
+        var abstractElement = document.getElementById(abstractId);
+        if (abstractElement) {
+            abstractElement.style.display = "none";
+        }
+    } else {
+        element.style.display = "none";
+    }
+}
+</script>
