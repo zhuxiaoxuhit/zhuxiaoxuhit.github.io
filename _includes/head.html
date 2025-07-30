@@ -54,6 +54,20 @@
     .navbar-toggle .icon-bar {
         background-color: #333 !important;
     }
+    
+    /* Center navigation items while preserving original styles */
+    @media (min-width: 768px) {
+        .navbar-collapse {
+            text-align: center;
+        }
+        .navbar-nav.navbar-right {
+            float: none !important;
+            display: inline-block;
+        }
+        .navbar-right {
+            margin-right: 0 !important;
+        }
+    }
     </style>
 
     <!-- Custom Fonts -->
