@@ -32,10 +32,10 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             
                             // 动态计算导航栏高度
                             const navbar = document.querySelector('.navbar-fixed-top');
-                            let navbarHeight = 60; // 默认值
+                            let navbarHeight = 40; // 减少偏移量，让位置向下
                             
                             if (navbar) {
-                                navbarHeight = navbar.offsetHeight + 20; // 额外20px间距
+                                navbarHeight = navbar.offsetHeight - 10; // 减少额外间距
                             }
                             
                             const targetPosition = targetElement.offsetTop - navbarHeight;
