@@ -3,6 +3,11 @@
      <div>
          <span>
              <img width="18px">
+             [个人主页](https://zhuxiaoxuhit.github.io/)
+         </span>
+        ·
+         <span>
+             <img width="18px">
              18701538360
          </span>
          ·
@@ -11,17 +16,17 @@
              zhuxiaoxuhit@gmail.com
          </span>
          ·
-              <span>
+         <span>
              <img width="18px">
              语音算法研究员
          </span>
          ·
-              <span>
+         <span>
              <img width="18px">
              山东临沂
          </span>
-        
-       
+ 
+
  </center>
 
 
@@ -34,13 +39,13 @@
 
 - **商汤科技**    语音算法研究员 2021.9~现在
 - **上海人工智能国家实验室**  算法顾问  2022.6~2023.6
-- **猎豹**    语音算法研究员 2019.10～2021.9
+- **猎豹(猎户星空)**    语音算法研究员 2019.10～2021.9
 - **西门子(圣彼得堡)**    算法实习生&算法工程师 2018.5 ～2019.9
 
 ## <img width="30px"> 学术论文&发明专利&竞赛活动&其他贡献
-- **Xiaoxu Zhu**,Junhua Li,**Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability**[[technical report](https://arxiv.org/pdf/2507.17851)]
-- Song Zhang, Ken Zheng, **Xiaoxu Zhu**, Baoxiang Li,**A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese**[[Interspeech 2022](https://www.isca-archive.org/interspeech_2022/zhang22b_interspeech.pdf)]
-- C. Ding, D. Zong, B. Li, S. Zhang, **X. Zhu**, G. Zhong, D. Zhou,**Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy**[[IEEE/ACM MuSe-Mimic 2023](https://dl.acm.org/doi/10.1145/3606039.3613113)]  
+- **Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability**[[technical report](https://arxiv.org/pdf/2507.17851)]
+- **A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese**[[Interspeech 2022](https://www.isca-archive.org/interspeech_2022/zhang22b_interspeech.pdf)]
+- **Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy**[[IEEE/ACM MuSe-Mimic 2023](https://dl.acm.org/doi/10.1145/3606039.3613113)]  
 - **多音字读音预测网络的训练方法、语音生成方法及装置**[CN115273809A]
 - **残差网络的训练和语音合成方法、装置、设备及介质**[CN112562655A]
 - **模型训练和语音合成方法、装置、设备及介质**[CN116206591A]
@@ -73,3 +78,4 @@
 - **基于FUZZY和ARTMAP的图片识别｜2018.02 - 2018.07｜西门子**
 ARTMAP 两端分别进行逻辑判断和模糊分类,形成用于数据分类和规则提取的混合模型,实现强
 化学习与数据分类,手写体字母识别准确率达到 91%。
+
