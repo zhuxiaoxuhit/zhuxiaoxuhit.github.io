@@ -20,7 +20,7 @@ description: "Technical blog posts on speech AI and machine learning"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            {% for post in site.posts %}
+            {% for post in paginator.posts %}
             <div class="post-preview" style="margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
                 <a href="{{ post.url | prepend: site.baseurl }}" style="text-decoration: none;">
                     <h2 class="post-title" style="color: #333; margin-bottom: 10px;">
@@ -47,7 +47,31 @@ description: "Technical blog posts on speech AI and machine learning"
             </div>
             {% endfor %}
 
-
+            <!-- Pagination -->
+            {% if paginator.total_pages > 1 %}
+            <ul class="pager" style="text-align: center; margin-top: 40px;">
+                {% if paginator.previous_page %}
+                <li class="previous" style="display: inline-block; margin-right: 20px;">
+                    {% if paginator.previous_page == 1 %}
+                    <a href="/blog/" style="background: #0085a1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                        <i class="fa fa-arrow-left"></i> Newer Posts
+                    </a>
+                    {% else %}
+                    <a href="/blog/page{{ paginator.previous_page }}/" style="background: #0085a1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                        <i class="fa fa-arrow-left"></i> Newer Posts
+                    </a>
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% if paginator.next_page %}
+                <li class="next" style="display: inline-block;">
+                    <a href="/blog/page{{ paginator.next_page }}/" style="background: #0085a1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                        Older Posts <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 </div> 
