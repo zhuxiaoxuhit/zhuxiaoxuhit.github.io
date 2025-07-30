@@ -29,7 +29,7 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                 <h2 style="color: #333; margin-bottom: 30px;"><i class="fa fa-book"></i> Publications</h2>
                 
                 <!-- Publication 1 -->
-                <div class="publication-item" style="margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                <div class="publication-item" style="margin-bottom: 40px; padding: 10px 0;">
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_1.png" alt="Paper 1" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
@@ -45,15 +45,28 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             </p>
                             <div style="margin-top: 10px;">
                                 <a href="https://arxiv.org/pdf/2507.17851" target="_blank" style="background: #0085a1; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">paper</a>
-                                <a href="#" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
-                                <a href="#" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                                <a href="javascript:void(0)" onclick="toggleAbstract('abstract1')" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
+                                <a href="javascript:void(0)" onclick="toggleBibtex('bibtex1')" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                            </div>
+                            <div id="abstract1" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c; border-radius: 5px;">
+                                <p style="color: #333; font-size: 14px; line-height: 1.6;">
+                                    This work focuses on speaker disentanglement in speech pre-trained models. We explore interpretability methods to understand how speaker information is encoded in large speech models and propose techniques to separate speaker-specific features from content features. Our approach enables better control over speaker characteristics in speech generation tasks while maintaining content quality.
+                                </p>
+                            </div>
+                            <div id="bibtex1" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #f0ad4e; border-radius: 5px;">
+                                <pre style="color: #333; font-size: 12px; margin: 0; white-space: pre-wrap;">@article{zhu2024speaker,
+  title={Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability},
+  author={Zhu, Xiaoxu and Li, Junhua},
+  journal={Technical Report},
+  year={2024}
+}</pre>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Publication 2 -->
-                <div class="publication-item" style="margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                <div class="publication-item" style="margin-bottom: 40px; padding: 10px 0;">
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_2.png" alt="Paper 2" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
@@ -69,15 +82,29 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             </p>
                             <div style="margin-top: 10px;">
                                 <a href="https://www.isca-archive.org/interspeech_2022/zhang22b_interspeech.pdf" target="_blank" style="background: #0085a1; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">paper</a>
-                                <a href="#" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
-                                <a href="#" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                                <a href="javascript:void(0)" onclick="toggleAbstract('abstract2')" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
+                                <a href="javascript:void(0)" onclick="toggleBibtex('bibtex2')" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                            </div>
+                            <div id="abstract2" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c; border-radius: 5px;">
+                                <p style="color: #333; font-size: 14px; line-height: 1.6;">
+                                    This paper presents a polyphone BERT model specifically designed for Mandarin Chinese polyphone disambiguation. We leverage the pre-trained BERT architecture and fine-tune it for the task of predicting correct pronunciations of polyphonic characters in Chinese text. The model achieves significant improvements in accuracy compared to traditional methods and shows robust performance across different domains.
+                                </p>
+                            </div>
+                            <div id="bibtex2" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #f0ad4e; border-radius: 5px;">
+                                <pre style="color: #333; font-size: 12px; margin: 0; white-space: pre-wrap;">@inproceedings{zhang2022polyphone,
+  title={A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese},
+  author={Zhang, Song and Zheng, Ken and Zhu, Xiaoxu and Li, Baoxiang},
+  booktitle={Proc. Interspeech 2022},
+  pages={1953--1957},
+  year={2022}
+}</pre>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Publication 3 -->
-                <div class="publication-item" style="margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                <div class="publication-item" style="margin-bottom: 40px; padding: 10px 0;">
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_3.png" alt="Paper 3" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
@@ -93,8 +120,22 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             </p>
                             <div style="margin-top: 10px;">
                                 <a href="https://dl.acm.org/doi/10.1145/3606039.3613113" target="_blank" style="background: #0085a1; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">paper</a>
-                                <a href="#" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
-                                <a href="#" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                                <a href="javascript:void(0)" onclick="toggleAbstract('abstract3')" style="background: #5cb85c; color: white; margin-right: 10px; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">abstract</a>
+                                <a href="javascript:void(0)" onclick="toggleBibtex('bibtex3')" style="background: #f0ad4e; color: white; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 12px;">bibtex</a>
+                            </div>
+                            <div id="abstract3" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c; border-radius: 5px;">
+                                <p style="color: #333; font-size: 14px; line-height: 1.6;">
+                                    This paper proposes an efficient multimodal transformer for sentiment analysis that integrates text, audio, and visual modalities. We introduce a modality-aware adaptive training strategy that dynamically adjusts the learning process based on the contribution of each modality. Our approach achieves state-of-the-art performance on the MuSe-Mimic challenge while maintaining computational efficiency.
+                                </p>
+                            </div>
+                            <div id="bibtex3" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #f0ad4e; border-radius: 5px;">
+                                <pre style="color: #333; font-size: 12px; margin: 0; white-space: pre-wrap;">@inproceedings{ding2023multimodal,
+  title={Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy},
+  author={Ding, C and Zong, D and Li, B and Zhang, S and Zhu, X and Zhong, G and Zhou, D},
+  booktitle={Proceedings of the 4th on Multimodal Sentiment Analysis Challenge and Workshop},
+  pages={39--46},
+  year={2023}
+}</pre>
                             </div>
                         </div>
                     </div>
