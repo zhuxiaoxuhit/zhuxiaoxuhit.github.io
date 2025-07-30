@@ -7,6 +7,68 @@
     <meta name="keywords"  content="{{ site.keyword }}">
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="author" content="Xiaoxu Zhu">
+    <meta name="robots" content="index,follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:creator" content="@xiaoxuzhu">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Xiaoxu Zhu",
+      "alternateName": "朱晓旭",
+      "jobTitle": "Speech AI Researcher",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SenseTime"
+      },
+      "url": "{{ site.url }}",
+      "sameAs": [
+        "{{ site.github_repo }}",
+        "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+      ],
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Harbin Institute of Technology"
+        },
+        {
+          "@type": "Organization", 
+          "name": "Peter the Great St. Petersburg Polytechnic University"
+        },
+        {
+          "@type": "Organization",
+          "name": "Tsinghua University"
+        }
+      ],
+      "knowsAbout": [
+        "Speech AI",
+        "Text-to-Speech",
+        "Speech Generation", 
+        "Large Language Models",
+        "Deep Learning",
+        "Machine Learning"
+      ]
+    }
+    </script>
+    
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
     <!-- Web App Manifest -->

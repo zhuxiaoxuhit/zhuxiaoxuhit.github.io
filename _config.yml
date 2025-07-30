@@ -3,11 +3,18 @@ title: Xiaoxu Zhu
 SEOTitle: Xiaoxu Zhu - Speech AI Researcher
 header-img: 
 email: zhuxiaoxuhit@gmail.com
-description: "Speech AI researcher focusing on large speech models and speech generation"
-keyword: "Speech AI,TTS,Speech Generation,Large Language Models,Deep Learning,Machine Learning"
-url: "http://zhuxiaoxuhit.github.io"          # your host, for absolute URL
+description: "Xiaoxu Zhu (朱晓旭) - Speech AI researcher focusing on large speech models and speech generation at SenseTime"
+keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Models,Deep Learning,Machine Learning,SenseTime,Researcher,AI Scientist,Speech Synthesis,Voice Generation,Neural Vocoder,LoRA,Parameter Efficient Fine-tuning"
+url: "https://zhuxiaoxuhit.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/zhuxiaoxuhit" # you code repository
+
+# SEO settings
+author: "Xiaoxu Zhu"
+twitter_username: ""
+linkedin_username: ""
+google_scholar: ""
+research_gate: ""
 
 # Sidebar settings
 sidebar: True                           # whether or not using Sidebar.
