@@ -33,7 +33,6 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_1.png" alt="Paper 1" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
-                            <p style="text-align: center; font-size: 12px; color: #666; margin-top: 5px;">Figure 1</p>
                         </div>
                         <div class="col-md-9">
                             <h4 style="margin-top: 0; color: #333;">Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability</h4>
@@ -50,14 +49,14 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             </div>
                             <div id="abstract1" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c; border-radius: 5px;">
                                 <p style="color: #333; font-size: 14px; line-height: 1.6;">
-                                    This work focuses on speaker disentanglement in speech pre-trained models. We explore interpretability methods to understand how speaker information is encoded in large speech models and propose techniques to separate speaker-specific features from content features. Our approach enables better control over speaker characteristics in speech generation tasks while maintaining content quality.
+                                    Speech pretrained models contain task-specific information across different layers, but decoupling content and timbre information remains challenging as removing speaker-specific information often causes content loss. Current research lacks direct metrics to quantify timbre residual in model encodings, relying on indirect evaluation through downstream tasks. This paper addresses these challenges through interpretability-based speaker disentanglement in speech pretraining models. We quantitatively evaluate timbre residual in model embeddings and improve speaker disentanglement using interpretive representations.
                                 </p>
                             </div>
                             <div id="bibtex1" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #f0ad4e; border-radius: 5px;">
                                 <pre style="color: #333; font-size: 12px; margin: 0; white-space: pre-wrap;">@article{zhu2024speaker,
   title={Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability},
   author={Zhu, Xiaoxu and Li, Junhua},
-  journal={Technical Report},
+  journal={arXiv preprint arXiv:2507.17851},
   year={2024}
 }</pre>
                             </div>
@@ -70,7 +69,6 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_2.png" alt="Paper 2" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
-                            <p style="text-align: center; font-size: 12px; color: #666; margin-top: 5px;">Figure 2</p>
                         </div>
                         <div class="col-md-9">
                             <h4 style="margin-top: 0; color: #333;">A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese</h4>
@@ -87,7 +85,7 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                             </div>
                             <div id="abstract2" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #5cb85c; border-radius: 5px;">
                                 <p style="color: #333; font-size: 14px; line-height: 1.6;">
-                                    This paper presents a polyphone BERT model specifically designed for Mandarin Chinese polyphone disambiguation. We leverage the pre-trained BERT architecture and fine-tune it for the task of predicting correct pronunciations of polyphonic characters in Chinese text. The model achieves significant improvements in accuracy compared to traditional methods and shows robust performance across different domains.
+                                    Grapheme-to-phoneme (G2P) conversion is an indispensable part of the Chinese Mandarin text-to-speech (TTS) system, and the core of G2P conversion is to solve the problem of polyphone disambiguation, which is to pick up the correct pronunciation for several candidates for a Chinese polyphonic character. In this paper, we propose a Chinese polyphone BERT model to predict the pronunciations of Chinese polyphonic characters. We create 741 new Chinese monophonic characters from 354 source Chinese polyphonic characters by pronunciation, then extend a pre-trained Chinese BERT with these new tokens and corresponding embedding layers initialized by the embeddings of source polyphonic characters.
                                 </p>
                             </div>
                             <div id="bibtex2" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-left: 4px solid #f0ad4e; border-radius: 5px;">
@@ -95,8 +93,8 @@ description: "Speech AI researcher focusing on large speech models and speech ge
   title={A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese},
   author={Zhang, Song and Zheng, Ken and Zhu, Xiaoxu and Li, Baoxiang},
   booktitle={Proc. Interspeech 2022},
-  pages={1953--1957},
-  year={2022}
+  year={2022},
+  note={Accepted for INTERSPEECH 2022}
 }</pre>
                             </div>
                         </div>
@@ -108,7 +106,6 @@ description: "Speech AI researcher focusing on large speech models and speech ge
                     <div class="row">
                         <div class="col-md-3">
                             <img src="/img/paper_placeholder_3.png" alt="Paper 3" class="img-responsive" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
-                            <p style="text-align: center; font-size: 12px; color: #666; margin-top: 5px;">Figure 3</p>
                         </div>
                         <div class="col-md-9">
                             <h4 style="margin-top: 0; color: #333;">Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy</h4>
