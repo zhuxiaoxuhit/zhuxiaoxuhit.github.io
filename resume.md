@@ -3,7 +3,7 @@
      <div>
          <span>
              <img width="18px">
-             [个人主页](https://zhuxiaoxuhit.github.io/)
+             [个人主页](https://zhuxiaoxu.com/)
          </span>
         ·
          <span>
