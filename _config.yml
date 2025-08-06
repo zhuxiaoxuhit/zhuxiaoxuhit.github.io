@@ -5,7 +5,7 @@ header-img:
 email: zhuxiaoxuhit@gmail.com
 description: "Xiaoxu Zhu (朱晓旭) - Speech AI researcher focusing on large speech models and speech generation at SenseTime"
 keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Models,Deep Learning,Machine Learning,SenseTime,Researcher,AI Scientist,Speech Synthesis,Voice Generation,Neural Vocoder,LoRA,Parameter Efficient Fine-tuning"
-url: "https://zhuxiaoxuhit.github.io"          # your host, for absolute URL
+url: "https://zhuxiaoxu.com"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/zhuxiaoxuhit" # you code repository
 
@@ -79,7 +79,7 @@ gitalk:
 
 # Google Analytics
 ga_track_id: 'UA-156115208-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: zhuxiaoxu.com               # 自定义域名
 
 
 
