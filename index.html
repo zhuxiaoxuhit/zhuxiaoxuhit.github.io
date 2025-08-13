@@ -8,6 +8,47 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
     {% include head.html %}
     <style>
         /* 移除之前的伪元素方法 */
+        
+        /* 响应式设计：手机端适配 */
+        @media (max-width: 768px) {
+            /* About Me 部分手机端适配 */
+            .about-me-flex {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
+            }
+            
+            .about-me-image {
+                text-align: center !important;
+                margin-bottom: 15px;
+            }
+            
+            .about-me-image img {
+                width: 150px !important;
+                max-width: 150px !important;
+            }
+            
+            /* Publications 部分手机端适配 */
+            .publication-flex {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
+            }
+            
+            .publication-image {
+                text-align: center !important;
+                margin-bottom: 15px;
+            }
+            
+            .publication-image img {
+                width: 120px !important;
+                max-width: 120px !important;
+            }
+            
+            .publication-content {
+                text-align: left !important;
+            }
+        }
     </style>
     <script>
         // 修复导航锚点定位
@@ -63,8 +104,8 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
             
             <div style="margin-bottom: 25px;">
                 <div style="padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div style="display: flex; align-items: flex-start; gap: 20px;">
-                        <div style="text-align: center; flex-shrink: 0;">
+                    <div class="about-me-flex" style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div class="about-me-image" style="text-align: center; flex-shrink: 0;">
                             <img src="/img/zhuxiaoxu.png" alt="Xiaoxu Zhu" style="width: 200px; max-width: 200px; border-radius: 10px;">
                         </div>
                         <div style="flex: 1;">
@@ -246,9 +287,11 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
             <div style="margin-bottom: 25px;">
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 25px; padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <div style="display: flex; align-items: flex-start; gap: 20px;">
-                            <img src="/img/paper_placeholder_1.png" alt="Paper 1" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
-                            <div style="flex: 1;">
+                        <div class="publication-flex" style="display: flex; align-items: flex-start; gap: 20px;">
+                            <div class="publication-image">
+                                <img src="/img/paper_placeholder_1.png" alt="Paper 1" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
+                            </div>
+                            <div class="publication-content" style="flex: 1;">
                                 <h3 style="margin: 0 0 10px 0; color: #333; font-size: 18px;">Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability</h3>
                                 <p style="color: #666; margin: 5px 0; font-size: 14px;">
                                     <strong>Xiaoxu Zhu</strong>, Junhua Li
@@ -279,9 +322,11 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
                     </li>
 
                     <li style="margin-bottom: 25px; padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <div style="display: flex; align-items: flex-start; gap: 20px;">
-                            <img src="/img/paper_placeholder_2.png" alt="Paper 2" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
-                            <div style="flex: 1;">
+                        <div class="publication-flex" style="display: flex; align-items: flex-start; gap: 20px;">
+                            <div class="publication-image">
+                                <img src="/img/paper_placeholder_2.png" alt="Paper 2" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
+                            </div>
+                            <div class="publication-content" style="flex: 1;">
                                 <h3 style="margin: 0 0 10px 0; color: #333; font-size: 18px;">A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese</h3>
                                 <p style="color: #666; margin: 5px 0; font-size: 14px;">
                                     Song Zhang, Ken Zheng, <strong>Xiaoxu Zhu</strong>, Baoxiang Li
@@ -313,9 +358,11 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
                     </li>
 
                     <li style="margin-bottom: 25px; padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <div style="display: flex; align-items: flex-start; gap: 20px;">
-                            <img src="/img/paper_placeholder_3.png" alt="Paper 3" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
-                            <div style="flex: 1;">
+                        <div class="publication-flex" style="display: flex; align-items: flex-start; gap: 20px;">
+                            <div class="publication-image">
+                                <img src="/img/paper_placeholder_3.png" alt="Paper 3" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
+                            </div>
+                            <div class="publication-content" style="flex: 1;">
                                 <h3 style="margin: 0 0 10px 0; color: #333; font-size: 18px;">Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy</h3>
                                 <p style="color: #666; margin: 5px 0; font-size: 14px;">
                                     C. Ding, D. Zong, B. Li, S. Zhang, <strong>X. Zhu</strong>, G. Zhong, D. Zhou
