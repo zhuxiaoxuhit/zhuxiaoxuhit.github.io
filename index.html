@@ -9,6 +9,34 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
     <style>
         /* 移除之前的伪元素方法 */
         
+        /* 打印/PDF样式：隐藏链接URL显示 */
+        @media print {
+            a[href]:after {
+                content: none !important;
+            }
+            
+            a {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+            
+            /* 确保打印时保持页面布局 */
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+            }
+            
+            /* 优化打印时的间距 */
+            .publication-flex, .about-me-flex {
+                page-break-inside: avoid;
+            }
+            
+            /* 隐藏不必要的交互元素 */
+            button {
+                display: none !important;
+            }
+        }
+        
         /* 响应式设计：手机端适配 */
         @media (max-width: 768px) {
             /* About Me 部分手机端适配 */
