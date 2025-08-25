@@ -324,7 +324,42 @@ keyword: "Xiaoxu Zhu,朱晓旭,Speech AI,TTS,Speech Generation,Large Language Mo
                     <li style="margin-bottom: 25px; padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <div class="publication-flex" style="display: flex; align-items: flex-start; gap: 20px;">
                             <div class="publication-image">
-                                <img src="/img/paper_placeholder_1.png" alt="Paper 1" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
+                                <img src="/img/paper_placeholder_4.png" alt="Paper 1" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
+                            </div>
+                            <div class="publication-content" style="flex: 1;">
+                                <h3 style="margin: 0 0 10px 0; color: #333; font-size: 18px; font-weight: normal;">Robust Residual Finite Scalar Quantization for Neural Compression</h3>
+                                <p style="color: #666; margin: 5px 0; font-size: 14px;">
+                                    <strong>Xiaoxu Zhu</strong>
+                                </p>
+                                <p style="color: #333; margin: 5px 0 15px 0; font-size: 14px; font-style: italic;">
+                                    arxiv, 2024
+                                </p>
+                                <div style="margin-bottom: 15px;">
+                                    <a href="https://arxiv.org/pdf/2508.15860" target="_blank" style="border: 1px solid #ddd; color: #333; margin-right: 8px; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; display: inline-block; background: #fff; cursor: pointer;">pdf</a>
+                                    <a href="javascript:void(0)" onclick="toggleAbstract('abstract0')" style="border: 1px solid #ddd; color: #333; margin-right: 8px; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; display: inline-block; background: #fff; cursor: pointer;">abstract</a>
+                                    <a href="javascript:void(0)" onclick="toggleBibtex('bibtex0')" style="border: 1px solid #ddd; color: #333; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; display: inline-block; background: #fff; cursor: pointer;">bibtex</a>
+                                </div>
+                                <div id="abstract0" style="display: none; margin-top: 15px; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <p style="color: #333; font-size: 14px; line-height: 1.6;">
+                                        Finite Scalar Quantization (FSQ) has emerged as a promising alternative to Vector Quantization (VQ) in neural compression, offering simplified training and improved stability. However, naive application of FSQ in residual quantization frameworks suffers from the residual magnitude decay problem, where subsequent FSQ layers receive progressively weaker signals, severely limiting their effectiveness. We propose Robust Residual Finite Scalar Quantization (RFSQ), a general framework that addresses this fundamental limitation through two novel conditioning strategies: learnable scaling factors and invertible layer normalization. Our approach maintains the simplicity of FSQ while enabling effective multi-stage residual quantization. Comprehensive experiments on ImageNet demonstrate that RFSQ variants significantly outperform strong baselines including VQ-EMA, FSQ, and LFQ, achieving up to 45% improvement in perceptual loss and 28.7% reduction in L1 reconstruction error. The proposed LayerNorm strategy shows the most consistent improvements across different configurations, establishing RFSQ as a superior quantization method for image compression.
+                                    </p>
+                                </div>
+                                <div id="bibtex0" style="display: none; margin-top: 15px; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <pre style="color: #333; font-size: 12px; margin: 0; white-space: pre-wrap;">@article{zhu2024robust,
+  title={Robust Residual Finite Scalar Quantization for Neural Compression},
+  author={Zhu, Xiaoxu},
+  journal={arXiv preprint arXiv:2508.15860},
+  year={2024}
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li style="margin-bottom: 25px; padding: 25px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div class="publication-flex" style="display: flex; align-items: flex-start; gap: 20px;">
+                            <div class="publication-image">
+                                <img src="/img/paper_placeholder_1.png" alt="Paper 2" style="width: 160px; height: auto; object-fit: contain; border-radius: 5px; flex-shrink: 0;">
                             </div>
                             <div class="publication-content" style="flex: 1;">
                                 <h3 style="margin: 0 0 10px 0; color: #333; font-size: 18px; font-weight: normal;">Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability</h3>
