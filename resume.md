@@ -13,7 +13,7 @@
         ·
         <span>
             <img width="18px">
-            语音算法研究员
+            高级语音算法研发
         </span>
         ·
         <span>
@@ -64,7 +64,7 @@ B.Eng.
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; font-size: 14px;">
 <div>
-<strong>商汤科技(SenseTime)</strong> | 语音算法研究员
+<strong>商汤科技(SenseTime)</strong> | 高级语音算法开发
 </div>
 <div style="text-align: right; white-space: nowrap;">
 2021.09 - 至今
@@ -91,7 +91,7 @@ B.Eng.
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; font-size: 14px;">
 <div>
-<strong>西门子(Siemens)</strong> | 算法实习生 & 算法工程师
+<strong>西门子(Siemens)</strong> | 算法实习生
 </div>
 <div style="text-align: right; white-space: nowrap;">
 2018.05 - 2019.09
@@ -102,14 +102,19 @@ B.Eng.
 ## 学术论文
 
 **Robust Residual Finite Scalar Quantization for Neural Compression**  
-**Xiaoxu Zhu**  
-*Manuscript in preparation for ICASSP 2026* | [PDF](https://arxiv.org/pdf/2508.15860)  
-*Proposes RFSQ framework that addresses residual magnitude decay problem in finite scalar quantization through learnable scaling and invertible layer normalization, achieving up to 45% improvement in perceptual loss for neural compression.*
+**Xiaoxu Zhu**, Jiakui Li, Ken Zheng, Guiping Zhong, Huimeng Wang, Shiyin Kang, Dahua Lin  
+*Manuscript in preparation for ICASSP 2026* | [PDF](https://cmsworkshops.com/ICASSP2026/Papers/Uploads/Proposals/PaperNum/17883/20250918064421_486976_17883.pdf)  
+*Proposes RFSQ framework that addresses residual magnitude decay problem in finite scalar quantization .*
 
 **Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability**  
-**Xiaoxu Zhu**, Junhua Li  
-*Manuscript in preparation for ICASSP 2026* | [PDF](https://arxiv.org/pdf/2507.17851)  
+**Xiaoxu Zhu**,Junhua Li,∗ Aaron J. Li, Yiming Ren, Baoxiang Li  
+*Manuscript in preparation for ICASSP 2026* | [PDF](https://cmsworkshops.com/ICASSP2026/Papers/Uploads/Proposals/PaperNum/16492/20250918064850_184179_16492.pdf)  
 *Introduces interpretability-based approach for speaker disentanglement in speech models using SHAP techniques, reducing timbre residual from 18.05% to near 0% while preserving content integrity.*
+
+**InteractiveOmni: A Unified Omni-modal Model for Audio-Visual Multi-turn Dialogue**   
+[共同一作]  
+*Technical Report* | [pdf](https://arxiv.org/pdf/2510.13747)  
+*Proposes an open-source 4B-8B omni-modal model for audio-visual multi-turn dialogue, integrates diverse encoders/decoders, boasting strong memory, speech generation and high parameter efficiency.*
 
 **A polyphone BERT for Polyphone Disambiguation in Mandarin Chinese**  
 Song Zhang, Ken Zheng, **Xiaoxu Zhu**, Baoxiang Li  
@@ -117,7 +122,7 @@ Song Zhang, Ken Zheng, **Xiaoxu Zhu**, Baoxiang Li
 *Develops a Chinese polyphone BERT model by extending pre-trained BERT with 741 new monophonic characters, achieving 2% improvement in polyphone disambiguation accuracy for TTS systems.*
 
 **Multimodal Sentiment Analysis via Efficient Multimodal Transformer and Modality-Aware Adaptive Training Strategy**  
-C. Ding, D. Zong, B. Li, S. Zhang, **X. Zhu**, G. Zhong, D. Zhou  
+C. Ding, D. Zong, B. Li, S. Zhang, **X. Zhu**, G. Zhong, D. Zhou
 *IEEE/ACM MuSe-Mimic 2023* | [PDF](https://dl.acm.org/doi/10.1145/3606039.3613113)  
 *Presents an efficient multimodal transformer with modality-aware training strategy for sentiment analysis, achieving 0.729 Pearson correlation coefficient and ranking 2nd in the MuSe-Mimic challenge.*
 
@@ -134,7 +139,7 @@ C. Ding, D. Zong, B. Li, S. Zhang, **X. Zhu**, G. Zhong, D. Zhou
 ### 传统语音合成系统 | 2021.9 - 2023.4 | 商汤科技   
 主导商汤第一代语音合成系统架构设计，基于SME的attention优化Tacotron模型，多子带LPCNet优化推理速度服务数字人、智能车舱、下棋机器人、直播数字人等;多音字优化: 预置多音字embedding方案，提升预测准确率;实时声音转换：搭建实时声音转换平台，实现数字人实时语音转换,上线元宇宙项目和直播数字人;
 
-### 情感语音合成和声码器 | 2021.1 - 2021.9 | 猎户星空(猎豹)
+### 情感语音合成和声码器 | 2021.1 - 2021.9 | 猎户星空
 基于GST增加上下文输入到TTS的算法实现在少量开源数据集上实现丰富的TTS情感表达显著提升语音合成的情感表现力和自然度，上线猎豹机器人家族;LPCNet声码器优化: Bunched和Multiband LPCNet算法开发与优化;Bunched单线程推理速度**4.2倍**实时，Multiband推理速度**5.3倍**实时;GRU和condition vector预计算提速约10%，贡献到LPCNet官方仓库;成功上线送餐机器人产品;
 
 ### 深度学习语音合成 | 2019.02 - 2019.09 | 西门子        
@@ -231,4 +236,5 @@ CN115294955B
 *性能优化贡献* | [GitHub Commit](https://github.com/xiph/LPCNet/commit/c1e85f88d908533c5600dbdd800ac589e15747f4)|实现GRU B条件向量预计算，LPCNet推理速度提升约**10%**;通过缓存频繁使用的条件向量，显著减少计算开销;改进实时语音合成性能，为工业级应用提供支持
 
 </div>
+
 
