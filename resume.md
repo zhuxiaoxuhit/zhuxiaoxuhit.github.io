@@ -107,12 +107,12 @@ B.Eng.
 *Proposes RFSQ framework that addresses residual magnitude decay problem in finite scalar quantization .*
 
 **Speaker Disentanglement of Speech Pre-trained Model Based on Interpretability**  
-**Xiaoxu Zhu**,Junhua Li,∗ Aaron J. Li, Yiming Ren, Baoxiang Li  
+**Xiaoxu Zhu**,Junhua Li, Aaron J. Li, Yiming Ren, Baoxiang Li  
 *Manuscript in preparation for ICASSP 2026* | [PDF](https://cmsworkshops.com/ICASSP2026/Papers/Uploads/Proposals/PaperNum/16492/20250918064850_184179_16492.pdf)  
 *Introduces interpretability-based approach for speaker disentanglement in speech models using SHAP techniques, reducing timbre residual from 18.05% to near 0% while preserving content integrity.*
 
-**InteractiveOmni: A Unified Omni-modal Model for Audio-Visual Multi-turn Dialogue**   
-[共同一作]  
+**InteractiveOmni: A Unified Omni-modal Model for Audio-Visual Multi-turn Dialogue**  
+Wenwen Tong, Hewei Guo, Dongchuan Ran, ...,  **Xiaoxu Zhu**, ..., Shiyin Kang, Lewei Lu | [共一]  
 *Technical Report* | [pdf](https://arxiv.org/pdf/2510.13747)  
 *Proposes an open-source 4B-8B omni-modal model for audio-visual multi-turn dialogue, integrates diverse encoders/decoders, boasting strong memory, speech generation and high parameter efficiency.*
 
