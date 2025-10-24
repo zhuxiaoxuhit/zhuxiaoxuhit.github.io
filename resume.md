@@ -82,7 +82,7 @@ B.Eng.
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; font-size: 14px;">
 <div>
-<strong>猎豹(猎户星空)</strong> | 语音算法工程师
+<strong>猎户星空(猎豹子公司)</strong> | 语音算法工程师
 </div>
 <div style="text-align: right; white-space: nowrap;">
 2019.10 - 2021.09
@@ -91,7 +91,7 @@ B.Eng.
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; font-size: 14px;">
 <div>
-<strong>西门子(Siemens)</strong> | 算法实习生
+<strong>西门子(Siemens Saint Petersburg)</strong> | 算法实习生
 </div>
 <div style="text-align: right; white-space: nowrap;">
 2018.05 - 2019.09
@@ -236,5 +236,6 @@ CN115294955B
 *性能优化贡献* | [GitHub Commit](https://github.com/xiph/LPCNet/commit/c1e85f88d908533c5600dbdd800ac589e15747f4)|实现GRU B条件向量预计算，LPCNet推理速度提升约**10%**;通过缓存频繁使用的条件向量，显著减少计算开销;改进实时语音合成性能，为工业级应用提供支持
 
 </div>
+
 
 
